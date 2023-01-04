@@ -1,1 +1,0 @@
-web: gunicorn moto_madness.wsgi
