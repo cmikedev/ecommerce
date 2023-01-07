@@ -1,8 +1,14 @@
 from django.shortcuts import render
+from .models import photos
 
+
+#def store(request):
+    #context = {}
+    #return render(request, 'store/store.html', context)
 
 def store(request):
-    context = {}
+    photo = photos.objects.all()
+    context = {'photo':photo}
     return render(request, 'store/store.html', context)
 
 
