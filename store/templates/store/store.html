@@ -1,9 +1,5 @@
+{% extends 'store/base.html' %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
-<h1>store</h1>
-
-{% for pic in photo %}
-    <h2>{{pic.title}}</h2>
-        <img src="{{pic.image.url}}" alt="fish">
-{% endfor %}
+{% block content %}
+    <h1>Store Test</h1>
+{% endblock content %}
