@@ -18,10 +18,17 @@ class Customer(models.Model):
 
 
 class Product(models.Model):
+    licence_type = (
+        ("a1", "A1"),
+        ("a2", "A2"),
+        ("a", "A"),
+    )
+
     title = models.CharField(max_length=200, unique=True)
     manufacturer = models.CharField(max_length=200)
     image = CloudinaryField('image')
     description = models.TextField(max_length=1000)
+    licence = models.CharField(max_length=50, choices=licence_type, default="All")
     price = models.FloatField()
 
 
