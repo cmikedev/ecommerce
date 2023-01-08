@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import photos
+from .models import photos, Contact
 
 
 def store(request):
     photo = photos.objects.all()
-    context = {'photo':photo}
+    context = {'photo': photo}
     return render(request, 'store/store.html', context)
 
 
