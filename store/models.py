@@ -23,3 +23,24 @@ class Product(models.Model):
     image = CloudinaryField('image')
     description = models.TextField(max_length=1000)
     price = models.FloatField()
+
+
+class Contact(models.Model):
+    question_type = (
+        ("licence", "Licence Type"),
+        ("maintenance", "Maintenance"),
+        ("sales", "Sales"),
+        ("shipping_charges", "Shipping Charges"),
+        ("refunds_returns", "Refunds and Returns"),
+        ("warranty", "Warranty Queries"),
+        ("other", "Other Queries"),
+    )
+
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=200)
+    question_categories = models.CharField('What does your query relate to?', max_length=50, choices=question_type, default='certification')
+    message = models.TextField(max_length=2000)
+
+    def __str__(self):
+        return self.email
