@@ -31,6 +31,9 @@ class Product(models.Model):
     licence = models.CharField(max_length=50, choices=licence_type, default="All")
     price = models.FloatField()
 
+    class Meta:
+        ordering = ["manufacturer",]
+
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)

@@ -16,22 +16,24 @@
         {% endfor %}
     </div>-->
     <!-- testing how card looks -->
-    <div class="row">
+    <div id="item-selection" class="row">
         {% for product in products %}
         <div class="col">
             <div class="card card-element" style="width: 18rem;">
-                <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="motorcycle">
+                <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}">
                 <div class="card-body">
                 <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
                 <h6 class="card-title"><strong>{{product.title}}</strong></h6>
                 <hr>
-                <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-secondary" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>
+                <h4><strong>
                     €{{product.price|floatformat:2}}
                 </strong></h4>
+                <hr>
+                <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+				<a class="btn btn-outline-secondary" href="#">View</a>
                 </div>
             </div>
+            <br>
         </div>
         {% endfor %}
     </div>
