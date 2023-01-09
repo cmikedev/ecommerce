@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <!-- testing how box looks -->
-    <div class="row">
+    <!--<div class="row">
         {% for product in products %}
         <div class="col-lg-4">
             <div class="box-element product">
@@ -14,13 +14,13 @@
             </div>
         </div>
         {% endfor %}
-    </div>
+    </div>-->
     <!-- testing how card looks -->
     <div class="row">
         {% for product in products %}
         <div class="col">
             <div class="card card-element" style="width: 18rem;">
-                <img class="card-img-top" src="{{product.image.url}}" alt="motorcycle">
+                <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="motorcycle">
                 <div class="card-body">
                 <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
                 <h6 class="card-title"><strong>{{product.title}}</strong></h6>
