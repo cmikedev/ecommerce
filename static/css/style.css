@@ -1,5 +1,10 @@
 /*----------------------Custom */
 
+.footer {
+	position: absolute;
+	bottom: 0 !important;
+}
+
 #item-selection {
 	padding-bottom: 5px;
 }
