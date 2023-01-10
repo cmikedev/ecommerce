@@ -3,20 +3,15 @@ from django.http import JsonResponse
 import json
 import datetime
 from .models import *
-from .utils import cookieCart
+from .utils import cookieCart, cartData
 
 
 def store(request):
 
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
-        items = order.orderitem_set.all()
-        cartItems = order.get_cart_items
-    else:
-        items = []
-        order = {'get_cart_total': 0, 'get_cart_items': 0}
-        cartItems = order['get_cart_items']
+    data = cartDara(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
 
     products = Product.objects.all()
     context = {'products': products, 'cartItems': cartItems}
@@ -25,51 +20,24 @@ def store(request):
 
 def cart(request):
 
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
-        items = order.orderitem_set.all()
-        cartItems = order.get_cart_items
-    else:
-        #Create empty cart for now for non-logged in user
-        try:
-            cart = json.loads(request.COOKIES['cart'])
-        except:
-            cart = {}
-            print('CART:', cart)
-
-        items = []
-        order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
-        cartItems = order['get_cart_items']
-
-        for i in cart:
-            try:
-                cartItems += cart[i]['quantity']
-
-                product = Product.objects.get(id=i)
-                total = (product.price * cart[i]['quantity'])
-
-                order['get_cart_total'] += total
-                order['get_cart_items'] += cart[i]['quantity']
-
-                item = {
-                        'id': product.id,
-                        'product': {
-                            'id': product.id,
-                            'name': product.name,
-                            'price': product.price, 
-                            'imageURL': product.imageURL
-                            },
-                        'quantity': cart[i]['quantity'],
-                        'get_total': total,
-                        }
-                items.append(item)
-            
-            except:
-                pass
+    data = cartDara(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
 
     context = {'items': items, 'order': order, 'cartItems': cartItems}
     return render(request, 'store/cart.html', context)
+
+
+def checkout(request):
+
+    data = cartDara(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+
+    context = {'items': items, 'order': order}
+    return render(request, 'store/checkout.html', context)
 
 
 def updateItem(request):
@@ -96,20 +64,6 @@ def updateItem(request):
         orderItem.delete()
 
     return JsonResponse('Item added to cart', safe=False)
-
-
-def checkout(request):
-
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
-        items = order.orderitem_set.all()
-    else:
-        items = []
-        order = {'get_cart_total': 0, 'get_cart_items': 0}
-
-    context = {'items': items, 'order': order}
-    return render(request, 'store/checkout.html', context)
 
 
 def contact(request):
@@ -140,7 +94,7 @@ def processOrder(request):
                 state=data['shipping']['state'],
                 zipcode=data['shipping']['zipcode'],
             )
-            
+
     else:
         print('User is not logged in')
 
