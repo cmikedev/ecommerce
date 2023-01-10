@@ -40,10 +40,12 @@
                             <img class="chg-quantity" url="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106816/krr6t3dvaiy5kr7r9c39.png">
                         </div>
                     </div>
-                    <div style="flex:1"><p>€19,980</p></div>
+                    <div style="flex:1"><p>€{{item.get_total|floatformat:2|intcomma}}</p></div>
                 </div>
                 {% endfor %}
             </div>
+            <br>
+            <br>
         </div>
     </div>
 {% endblock content %}
