@@ -1,5 +1,6 @@
 {% extends 'store/base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
     <div class="row">
         <div class="col-lg-12">
@@ -10,7 +11,7 @@
                 <table class="table">
                     <tr>
                         <th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>
-                        <th><h5>Total:<strong> €{{order.get_cart_total|floatformat:2}}</strong></h5></th>
+                        <th><h5>Total:<strong> €{{order.get_cart_total|floatformat:2|intcomma}}</strong></h5></th>
                         <th>
                             <a style="float: right; margin: 5px;" class="btn btn-outline-secondary" href="{% url 'checkout' %}">
                             Checkout</a>
@@ -31,7 +32,7 @@
                 <div class="cart-row">
                     <div style="flex:2"><img class="row-image" src={{item.product.image.url}}></div>
                     <div style="flex:2"><p>{{item.product.title}}</p></div>
-                    <div style="flex:1"><p>€{{item.product.price|floatformat:2}}</p></div>
+                    <div style="flex:1"><p>€{{item.product.price|floatformat:2|intcomma}}</p></div>
                     <div style="flex:1">
                         <p class="quantity">x{{item.quantity}}</p>
                         <div class="quantity">

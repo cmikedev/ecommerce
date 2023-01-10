@@ -1,5 +1,6 @@
 {% extends 'store/base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
     <!-- testing how box looks -->
     <!--<div class="row">
@@ -26,7 +27,7 @@
                 <h6 class="card-title"><strong>{{product.title}}</strong></h6>
                 <hr>
                 <h4><strong>
-                    €{{product.price|floatformat:2}}
+                    €{{product.price|floatformat:2|intcomma}}
                 </strong></h4>
                 <hr>
                 <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
