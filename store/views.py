@@ -8,7 +8,7 @@ from .utils import cookieCart, cartData
 
 def store(request):
 
-    data = cartDara(request)
+    data = cartData(request)
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
@@ -20,7 +20,7 @@ def store(request):
 
 def cart(request):
 
-    data = cartDara(request)
+    data = cartData(request)
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
@@ -31,7 +31,7 @@ def cart(request):
 
 def checkout(request):
 
-    data = cartDara(request)
+    data = cartData(request)
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
