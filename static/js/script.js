@@ -1,3 +1,5 @@
+/** The below code is taken from Dennis Ivy's tutorial. See Readme -> Credits **/
+
 var updateBtns = document.getElementsByClassName('update-cart')
 
 for (i = 0; i < updateBtns.length; i++) {
@@ -25,13 +27,14 @@ function updateUserOrder(productId, action){
 			method:'POST',
 			headers:{
 				'Content-Type':'application/json',
+                'X-CSRFToken':csrftoken,
 			}, 
 			body:JSON.stringify({'productId':productId, 'action':action})
 		})
 		.then((response) => {
-		   return response.json();
+            return response.json();
 		})
 		.then((data) => {
-		    console.log('Data:', data)
+            location.reload()
 		});
 }

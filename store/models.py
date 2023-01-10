@@ -7,6 +7,9 @@ class Photo(models.Model):
     title = models.CharField(max_length=100)
     image = CloudinaryField('image')
 
+    def __str__(self):
+        return self.title
+
 
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
