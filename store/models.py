@@ -9,7 +9,7 @@ class Photo(models.Model):
 
 
 class Customer(models.Model):
-    username = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     email = models.EmailField(max_length=200)
 
@@ -55,7 +55,7 @@ class OrderItem(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.order
+        return str(self.order)
 
 
 class ShippingAddress(models.Model):
