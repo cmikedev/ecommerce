@@ -69,15 +69,18 @@
     
     <script type="text/javascript">
 		//var shipping = '{{order.shipping}}'
-
+		var user = '{{request.user}}'
 		//if (shipping == 'False'){
 		// 	document.getElementById('shipping-info').innerHTML = ''
 		//}
 		var total = '{{order.get_cart_total|floatformat:2|intcomma}}'
+		console.log(user)
 
 		if (user != 'AnonymousUser'){
-		 	document.getElementById('user-info').innerHTML = ''
-		 }
+		 	//document.getElementById('user-info').innerHTML = '';
+			//document.getElementById('user-info').classList.add("hidden");
+			document.getElementsByClassName('user-info').classList.add("hidden");
+		}
 
 		var form = document.getElementById('form')
 		form.addEventListener('submit', function(e){
