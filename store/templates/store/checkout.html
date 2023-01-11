@@ -68,12 +68,16 @@
     </div>
     
     <script type="text/javascript">
-		var shipping = '{{order.shipping}}'
-        var total = '{{order.get_cart_total|floatformat:2|intcomma}}'
+		//var shipping = '{{order.shipping}}'
+
+		//if (shipping == 'False'){
+		// 	document.getElementById('shipping-info').innerHTML = ''
+		//}
+		var total = '{{order.get_cart_total|floatformat:2|intcomma}}'
 
 		if (user != 'AnonymousUser'){
 		 	document.getElementById('user-info').innerHTML = ''
-		}
+		 }
 
 		var form = document.getElementById('form')
 		form.addEventListener('submit', function(e){
@@ -83,7 +87,7 @@
 	    	document.getElementById('payment-info').classList.remove("hidden");
 	    })
 
-	    document.getElementById('make-payment').addEventListener('click', function(e){
+		document.getElementById('make-payment').addEventListener('click', function(e){
 	    	submitFormData()
 	    })
 
@@ -101,17 +105,8 @@
 				'city':null,
 				'state':null,
 				'zipcode':null,
-                'country':null,
+				'country':null,
 			}
-
-			if (shipping != 'False'){
-	    		shippingInfo.address = form.address.value
-		    	shippingInfo.city = form.city.value
-		    	shippingInfo.state = form.state.value
-		    	shippingInfo.zipcode = form.zipcode.value
-                shippingInfo.country = form.country.value
-	    	}
-
 	    	if (user == 'AnonymousUser'){
 	    		userFormData.name = form.name.value
 	    		userFormData.email = form.email.value
@@ -120,7 +115,7 @@
 	    	console.log('Shipping Info:', shippingInfo)
 	    	console.log('User Info:', userFormData)
 
-            var url = "/process_order/"
+			var url = "/process_order/"
 	    	fetch(url, {
 	    		method:'POST',
 	    		headers:{
@@ -138,6 +133,7 @@
 
 				})
 	    }
+
 	</script>
 
 {% endblock content %}
