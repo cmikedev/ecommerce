@@ -79,7 +79,7 @@
 		if (user != 'AnonymousUser'){
 		 	//document.getElementById('user-info').innerHTML = '';
 			//document.getElementById('user-info').classList.add("hidden");
-			document.getElementsByClassName('user-info').classList.add("hidden");
+			document.getElementsByClassName('user-info')[0].style.display="none";
 		}
 
 		var form = document.getElementById('form')
