@@ -70,11 +70,13 @@
     </div>
     
 	<!-- PayPal Checkout -->
-	<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+	<script src="https://www.paypal.com/sdk/js?client-id=AX4Vz2aQo2XY_DCUd2u2eA8NJ-lBhpXwZin6eORcDWhvLIla9_0lx-RaqC3-FqF0pO25CfTQH9_OTPyf"></script>
 
 	<!-- Script from PayPal Developer Website -->
 	<script>
         // Render the PayPal button into #paypal-button-container
+		var total = '{{order.get_cart_total}}'
+
         paypal.Buttons({
 
             // Set up the transaction
@@ -82,7 +84,7 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: '88.44'
+                            value:parseFloat(total).toFixed(2)
                         }
                     }]
                 });
@@ -183,7 +185,7 @@
 
 <script type="text/javascript">
 	var shipping = '{{order.shipping}}'
-	var total = '{{order.get_cart_total}}'
+	//var total = '{{order.get_cart_total}}'
 	var user = '{{request.user}}'
 
 	if (shipping == 'False'){
