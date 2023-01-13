@@ -65,7 +65,7 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     transaction_id = models.ForeignKey(Order, related_name='orders_table', on_delete=models.SET_NULL, null=True, blank=True)
-    customer = models.ForeignKey(Order, related_name="customer_name", on_delete=models.SET_NULL, null=True, blank=True)
+    customer = models.ForeignKey(Customer, related_name="customer_name", on_delete=models.SET_NULL, null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     price = models.ForeignKey(Product, related_name="item_price", on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)

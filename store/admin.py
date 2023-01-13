@@ -5,7 +5,6 @@ admin.site.register(Photo)
 admin.site.register(Customer)
 admin.site.register(Product)
 admin.site.register(Order)
-#admin.site.register(OrderItem)
 admin.site.register(ShippingAddress)
 admin.site.register(Contact)
 
@@ -21,4 +20,4 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ('order', 'product', 'quantity', 'price', 'date_added')
+    list_display = ('order', 'customer', 'product', 'quantity', 'price', 'date_added')

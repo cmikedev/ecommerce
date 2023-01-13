@@ -111,6 +111,19 @@ def processOrder(request):
 			state=data['shipping']['state'],
 			zipcode=data['shipping']['zipcode'],
 			)
+		#------------------ Custom Code
+		"""Sale.objects.create(
+			#order_id=order.transaction_id,
+			customer=customer,
+			order=order,
+			#product=product,
+			#total=total,
+			#created=created,
+			address=data['shipping']['address'],
+			city=data['shipping']['city'],
+			state=data['shipping']['state'],
+			zipcode=data['shipping']['zipcode'],
+			)"""
 		
 	else:
 		print('User is not logged in')
