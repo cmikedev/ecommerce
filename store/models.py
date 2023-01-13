@@ -91,6 +91,7 @@ class ShippingAddress(models.Model):
         return self.address
 
 
+
 class Contact(models.Model):
     question_type = (
         ("licence", "Licence Type"),
