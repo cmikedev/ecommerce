@@ -92,7 +92,7 @@ def processOrder(request):
 			order.complete = True
 		order.save()
 
-		if order.shipping == True:
+		"""if order.shipping == True:
 			ShippingAddress.objects.create(
 			customer=customer,
 			order=order,
@@ -101,7 +101,17 @@ def processOrder(request):
 			state=data['shipping']['state'],
 			zipcode=data['shipping']['zipcode'],
 			country=data['shipping']['zipcode'],
+			)"""
+		
+		ShippingAddress.objects.create(
+			customer=customer,
+			order=order,
+			address=data['shipping']['address'],
+			city=data['shipping']['city'],
+			state=data['shipping']['state'],
+			zipcode=data['shipping']['zipcode'],
 			)
+		
 	else:
 		print('User is not logged in')
 
