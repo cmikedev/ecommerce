@@ -62,7 +62,7 @@ def cartData(request):
     return {'cartItems': cartItems, 'order': order, 'items': items}
 
 
-def guestOrder(request, data):
+"""def guestOrder(request, data):
     name = data['form']['name']
     email = data['form']['email']
 
@@ -87,4 +87,4 @@ def guestOrder(request, data):
             order=order,
             quantity=item['quantity'],
         )
-    return customer, order
+    return customer, order"""
