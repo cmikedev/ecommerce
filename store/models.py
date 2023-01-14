@@ -2,6 +2,8 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.urls import reverse
+#from autoslug import AutoSlugField
 
 
 class Photo(models.Model):
@@ -30,17 +32,21 @@ class Product(models.Model):
     )
 
     title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, default="add_slug")
     manufacturer = models.CharField(max_length=200)
     image = CloudinaryField('image')
     description = models.TextField(max_length=1000)
     licence = models.CharField(max_length=50, choices=licence_type, default="All")
     price = models.FloatField()
-
+    
     class Meta:
-        ordering = ["manufacturer",]
+        ordering = ['manufacturer',]
 
     def __str__(self):
         return self.title
+
+    def get_absolute_urls(self):
+        return reverse('product:detail', args=[self.slug])
 
 
 class Order(models.Model):

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views import generic, View
 from django.http import JsonResponse
 import json
 import datetime
@@ -21,8 +22,13 @@ def store(request):
 	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'store/store.html', context)
 
-def cart(request):
 
+class ProductDetail(generic.DetailView):
+    model = Product
+    template_name = 'store/detail.html'
+
+
+def cart(request):
 	if request.user.is_authenticated:
 		customer = request.user.customer
 		order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -49,6 +55,7 @@ def checkout(request):
 
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/checkout.html', context)
+
 
 def updateItem(request):
 	data = json.loads(request.body)
