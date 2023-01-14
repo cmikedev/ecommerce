@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
+from store.models import Customer
 
 
 #--------- Code from Django Docs
@@ -32,6 +33,10 @@ def register_user(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            #--------- Adding new registered user to Customer model
+            new_user = form.save()
+            Customer.objects.create(user=new_user)
+            #---------------------------------------
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)

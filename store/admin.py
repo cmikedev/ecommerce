@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(Photo)
-admin.site.register(Customer)
+#admin.site.register(Customer)
 admin.site.register(Product)
 admin.site.register(Order)
 admin.site.register(ShippingAddress)
@@ -21,3 +21,8 @@ class OrderAdmin(admin.ModelAdmin):
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
     list_display = ('order', 'customer', 'product', 'quantity', 'price', 'date_added')
+
+
+@admin.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ('user', 'name')

@@ -1,6 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from django.conf import settings
 
 
 class Photo(models.Model):
@@ -12,12 +13,13 @@ class Photo(models.Model):
 
 
 class Customer(models.Model):
+    #name = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='user_name', on_delete=models.CASCADE, default='')
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     email = models.EmailField(max_length=200)
 
     def __str__(self):
-        return self.name
+        return str(self.user)
 
 
 class Product(models.Model):
@@ -49,6 +51,7 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.id)
+
 
     @property
     def get_cart_total(self):
