@@ -2,4 +2,18 @@
 {% load static %}
 {% load humanize %}
 {% block content %}
+
+    <div class="box-element">
+        <h1>{{product.manufacturer}}</h1>
+        <hr>
+        <h3>{{product.title}}</h3>
+        <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
+        <br>
+        <p>{{product.description}}</p>
+        <br>
+        <h4>Licence type: {{product.licence}}</h4>
+        <br>
+        <h3>€{{product.price|floatformat:2|intcomma}}</h3>
+    </div>
+
 {% endblock content %}
