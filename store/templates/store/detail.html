@@ -2,8 +2,8 @@
 {% load static %}
 {% load humanize %}
 {% load crispy_forms_tags %}
-{% block content %}
 
+{% block content %}
     <div id="product-details">
         <h1>{{product.manufacturer}}</h1>
         <hr>
@@ -28,9 +28,12 @@
         <br>
         <h4>Comments...</h4>
         <br>
+
         <!-- Comment Section -->
         {% if not product.comments.all %}
+            <br>
             No comments yet...Be the first to comment!
+            <br>
         {% else %}
             {% for comment in product.comments.all %}
                 <strong>
@@ -39,20 +42,20 @@
                 </strong>
                 <br>
                 {{comment.body}}
-                <br>
+                <br><br>
             {% endfor %}
         {% endif %}
-        <br><br>
+        <br>
 
         <!-- Comment Form -->
         {% if commented %}
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success alert-dismissible" role="alert">
                 Your comment is awaiting approval
             </div>
         {% else %}
             {% if user.is_authenticated %}
-
                 <h3>Leave a comment:</h3>
+                <br>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
@@ -60,14 +63,12 @@
                     <!--<button type="submit" class="btn btn-signup btn-lg">Submit</button>-->
                     <input type="submit" value="Submit" class="btn btn-outline-secondary">
                 </form>
-
-                {% else %}
-                    <p>You must be signed-in to comment. Please sign-in or register an account.</p>
-                    <div class="col">
-                        <a href="{% url 'login' %}" class="btn btn-outline-secondary">Login</a>
-                        <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register</a>
-                    </div>
-
+            {% else %}
+                <p>You must be signed-in to comment. Please sign-in or register an account.</p>
+                <div class="col">
+                    <a href="{% url 'login' %}" class="btn btn-outline-secondary">Login</a>
+                    <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register</a>
+                </div>
             {% endif %}
         {% endif %}
         <br><br>

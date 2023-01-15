@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.views import generic, View
 from django.http import JsonResponse
 import json
@@ -43,7 +44,6 @@ class ProductDetail(generic.DetailView):
 			},
 		)
 
-
 	def post(self, request, slug, *args, **kwargs):
 		queryset = Product.objects
 		post = get_object_or_404(queryset, slug=slug)
@@ -58,7 +58,7 @@ class ProductDetail(generic.DetailView):
 		else:
 			comment_form = CommentForm()
 			
-		return render(
+		"""return render(
 			request,
 			"store/detail.html",
 			{
@@ -67,7 +67,9 @@ class ProductDetail(generic.DetailView):
 				"commented": True,
 				"comment_form": comment_form,
 			},
-		)
+		)"""
+
+		return HttpResponseRedirect(reverse('detail', args=[slug]))
 
 
 def cart(request):

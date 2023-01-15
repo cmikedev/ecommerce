@@ -4,8 +4,8 @@
 	padding-bottom: 5px;
 }
 
-#product-details {
-	width: 75%;
+#product-details, {
+	width: 50%;
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;
 	border-radius: 4px;
