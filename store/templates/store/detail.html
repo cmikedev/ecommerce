@@ -1,6 +1,7 @@
 {% extends 'store/base.html' %}
 {% load static %}
 {% load humanize %}
+{% load crispy_forms_tags %}
 {% block content %}
 
     <div id="product-details">
@@ -8,8 +9,7 @@
         <hr>
         <h3>{{product.title}}</h3>
         <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
-        <br>
-        <br>
+        <br><br>
         <hr>
         <h3>Details</h3>
         <br>
@@ -20,16 +20,17 @@
         <h4><strong>
             €{{product.price|floatformat:2|intcomma}}
         </strong></h4>
-        <hr>
+        <br>
         <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
         <a class="btn btn-outline-secondary" href="{% url 'store' %}">Back</a>
-        <br>
-        <br>
+        <br><br>
+        <hr>
         <br>
         <h4>Comments...</h4>
         <br>
+        <!-- Comment Section -->
         {% if not product.comments.all %}
-            No comments yet...<a href="#">Be the first to comment</a>
+            No comments yet...Be the first to comment!
         {% else %}
             {% for comment in product.comments.all %}
                 <strong>
@@ -38,9 +39,38 @@
                 </strong>
                 <br>
                 {{comment.body}}
-                <hr>
+                <br>
             {% endfor %}
         {% endif %}
+        <br><br>
+
+        <!-- Comment Form -->
+        {% if commented %}
+            <div class="alert alert-success" role="alert">
+                Your comment is awaiting approval
+            </div>
+        {% else %}
+            {% if user.is_authenticated %}
+
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <!--<button type="submit" class="btn btn-signup btn-lg">Submit</button>-->
+                    <input type="submit" value="Submit" class="btn btn-outline-secondary">
+                </form>
+
+                {% else %}
+                    <p>You must be signed-in to comment. Please sign-in or register an account.</p>
+                    <div class="col">
+                        <a href="{% url 'login' %}" class="btn btn-outline-secondary">Login</a>
+                        <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register</a>
+                    </div>
+
+            {% endif %}
+        {% endif %}
+        <br><br>
     </div>
 
 {% endblock content %}

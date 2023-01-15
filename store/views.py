@@ -1,13 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.http import JsonResponse
 import json
 import datetime
 from .models import *
+from .forms import CommentForm
 
 
 def store(request):
-
 	if request.user.is_authenticated:
 		customer = request.user.customer
 		order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -15,17 +15,61 @@ def store(request):
 		cartItems = order.get_cart_items
 	else:
 		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
+		order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
 		cartItems = order['get_cart_items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+	context = {'products': products, 'cartItems': cartItems}
 	return render(request, 'store/store.html', context)
 
 
 class ProductDetail(generic.DetailView):
-    model = Product
-    template_name = 'store/detail.html'
+	model = Product
+	template_name = 'store/detail.html'
+
+	#def get(self, request, slug, *args, **kwargs):
+	def get(self, request, slug, *args, **kwargs):
+		queryset = Product.objects
+		product = get_object_or_404(queryset, slug=slug)
+		comments = product.comments.filter(approved=True).order_by("date_added")
+
+		return render(
+			request,
+			"store/detail.html",
+			{
+				"product": product,
+				"comments": comments,
+				"commented": False,
+				"comment_form": CommentForm()
+			},
+		)
+
+	#def post(self, request, slug, *args, **kwargs):
+	def post(self, request, slug, *args, **kwargs):
+		
+		queryset = Product.objects
+		post = get_object_or_404(queryset, slug=slug)
+		comments = post.comments.filter(approved=True).order_by("date_added")
+		
+		comment_form = CommentForm(data=request.POST)
+		if comment_form.is_valid():
+			comment_form.instance.name = request.user.username
+			comment = comment_form.save(commit=False)
+			comment.post = post
+			comment.save()
+		else:
+			comment_form = CommentForm()
+			
+		return render(
+			request,
+			"store/detail.html",
+			{
+				"post": post,
+				"comments": comments,
+				"commented": True,
+				"comment_form": comment_form,
+			},
+		)
 
 
 def cart(request):
@@ -36,11 +80,12 @@ def cart(request):
 		cartItems = order.get_cart_items
 	else:
 		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
+		order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
 		cartItems = order['get_cart_items']
 
-	context = {'items':items, 'order':order, 'cartItems':cartItems}
+	context = {'items': items, 'order': order, 'cartItems': cartItems}
 	return render(request, 'store/cart.html', context)
+
 
 def checkout(request):
 	if request.user.is_authenticated:
@@ -50,10 +95,10 @@ def checkout(request):
 		cartItems = order.get_cart_items
 	else:
 		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
+		order = {'get_cart_total': 0, 'get_cart_items': 0 , 'shipping': False}
 		cartItems = order['get_cart_items']
 
-	context = {'items':items, 'order':order, 'cartItems':cartItems}
+	context = {'items': items, 'order': order, 'cartItems': cartItems}
 	return render(request, 'store/checkout.html', context)
 
 
@@ -81,6 +126,7 @@ def updateItem(request):
 		orderItem.delete()
 
 	return JsonResponse('Item was added', safe=False)
+
 
 def processOrder(request):
 	transaction_id = datetime.datetime.now().timestamp()
