@@ -3,17 +3,26 @@
 {% load humanize %}
 {% block content %}
 
-    <div class="box-element">
+    <div id="product-details">
         <h1>{{product.manufacturer}}</h1>
         <hr>
         <h3>{{product.title}}</h3>
         <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
         <br>
+        <br>
+        <hr>
+        <h3>Details</h3>
+        <br>
         <p>{{product.description}}</p>
         <br>
         <h4>Licence type: {{product.licence}}</h4>
         <br>
-        <h3>€{{product.price|floatformat:2|intcomma}}</h3>
+        <h4><strong>
+            €{{product.price|floatformat:2|intcomma}}
+        </strong></h4>
+        <hr>
+        <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+        <a class="btn btn-outline-secondary" href="{% url 'store' %}">Back</a>
     </div>
 
 {% endblock content %}

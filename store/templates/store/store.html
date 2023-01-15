@@ -23,15 +23,15 @@
             <div class="card card-element" style="width: 18rem;">
                 <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}">
                 <div class="card-body">
-                <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
-                <h6 class="card-title"><strong>{{product.title}}</strong></h6>
-                <hr>
-                <h4><strong>
-                    €{{product.price|floatformat:2|intcomma}}
-                </strong></h4>
-                <hr>
-                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-				<a class="btn btn-outline-secondary" href="{% url 'detail' product.slug %}">View</a>
+                    <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
+                    <h6 class="card-title"><strong>{{product.title}}</strong></h6>
+                    <hr>
+                    <h4><strong>
+                        €{{product.price|floatformat:2|intcomma}}
+                    </strong></h4>
+                    <hr>
+                    <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug %}">View</a>
                 </div>
             </div>
             <br>
