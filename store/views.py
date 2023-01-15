@@ -27,7 +27,6 @@ class ProductDetail(generic.DetailView):
 	model = Product
 	template_name = 'store/detail.html'
 
-	#def get(self, request, slug, *args, **kwargs):
 	def get(self, request, slug, *args, **kwargs):
 		queryset = Product.objects
 		product = get_object_or_404(queryset, slug=slug)
@@ -44,9 +43,8 @@ class ProductDetail(generic.DetailView):
 			},
 		)
 
-	#def post(self, request, slug, *args, **kwargs):
+
 	def post(self, request, slug, *args, **kwargs):
-		
 		queryset = Product.objects
 		post = get_object_or_404(queryset, slug=slug)
 		comments = post.comments.filter(approved=True).order_by("date_added")
