@@ -49,6 +49,20 @@ class Product(models.Model):
         return reverse('product:detail', args=[self.slug])
 
 
+class Comment(models.Model):
+    post = models.ForeignKey(Product, related_name="comments", on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    body = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["date_added"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
+
+
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     date_ordered = models.DateTimeField(auto_now_add=True)
