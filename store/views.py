@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
-from django.views import generic, View
+from django.views import generic
 from django.http import JsonResponse
+from django.contrib import messages
 import json
 import datetime
 from .models import *
@@ -48,13 +49,14 @@ class ProductDetail(generic.DetailView):
 		queryset = Product.objects
 		post = get_object_or_404(queryset, slug=slug)
 		comments = post.comments.filter(approved=True).order_by("date_added")
-		
 		comment_form = CommentForm(data=request.POST)
+		
 		if comment_form.is_valid():
 			comment_form.instance.name = request.user.username
 			comment = comment_form.save(commit=False)
 			comment.post = post
 			comment.save()
+			messages.success(request, ('Thank you. Your comment has been posted.'))
 		else:
 			comment_form = CommentForm()
 			
