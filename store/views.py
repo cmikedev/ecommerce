@@ -70,7 +70,7 @@ class ProductDetail(generic.DetailView):
 			comment = comment_form.save(commit=False)
 			comment.post = post
 			comment.save()
-			messages.success(request, ('Thank you. Your comment has been posted.'))
+			messages.success(request, ('Thank you. Your comment has been received as is awaiting approval.'))
 		else:
 			comment_form = CommentForm()
 			
