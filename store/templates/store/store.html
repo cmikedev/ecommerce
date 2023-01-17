@@ -20,7 +20,8 @@
     <div id="item-selection" class="row">
         {% for product in products %}
         <div class="col">
-            <div class="card card-element" style="width: 18rem;">
+            <!--<div class="card card-element" style="width: 18rem;">-->
+            <div class="card card-element align-items-auto" style="width: 18rem;">
                 <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}">
                 <div class="card-body">
                     <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
