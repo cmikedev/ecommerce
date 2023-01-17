@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.views import generic
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.http import JsonResponse
 from django.contrib import messages
 import json
@@ -25,7 +26,7 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 
-#---------------Custom Class
+#-------------------------/ Custom Class
 
 class ProductDetail(generic.DetailView):
 	model = Product

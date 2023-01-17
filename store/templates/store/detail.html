@@ -43,6 +43,14 @@
                     </strong>
                     <br>
                     {{comment.body}}
+
+                    {% if comment.name == user.username %}
+                    <div>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="#">Update</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Delete</a>
+                      </div>
+                    {% endif %}
+                    
                     <br><br>
                 {% endif %}
             {% endfor %}
@@ -76,5 +84,8 @@
         <br><br>
     </div>
     <br><br><br>
+
+    <!-- New Comment Page -->
+
 
 {% endblock content %}

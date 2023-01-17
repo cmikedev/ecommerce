@@ -5,7 +5,7 @@ from django.conf import settings
 from django.urls import reverse
 #from autoslug import AutoSlugField
 
-
+#-------------------------/ Custom Model
 class Photo(models.Model):
     title = models.CharField(max_length=100)
     image = CloudinaryField('image')
@@ -71,7 +71,6 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.id)
-
 
     @property
     def get_cart_total(self):
