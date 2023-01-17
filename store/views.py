@@ -9,6 +9,21 @@ from .models import *
 from .forms import CommentForm
 
 
+"""def itemsInCart(request):
+
+	if request.user.is_authenticated:
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
+		items = order.orderitem_set.all()
+		cartItems = order.get_cart_items
+	else:
+		items = []
+		order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+		cartItems = order['get_cart_items']
+
+	return customer, order, created, items, cartItems"""
+
+
 def store(request):
 	if request.user.is_authenticated:
 		customer = request.user.customer
@@ -33,15 +48,26 @@ class ProductDetail(generic.DetailView):
 		queryset = Product.objects
 		product = get_object_or_404(queryset, slug=slug)
 		comments = product.comments.filter(approved=True).order_by("date_added")
+		# Populating item number in cart
+		if request.user.is_authenticated:
+			customer = request.user.customer
+			order, created = Order.objects.get_or_create(customer=customer, complete=False)
+			items = order.orderitem_set.all()
+			cartItems = order.get_cart_items
+		else:
+			items = []
+			order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+			cartItems = order['get_cart_items']
 
 		return render(
 			request,
-			"store/detail.html",
+			'store/detail.html',
 			{
-				"product": product,
-				"comments": comments,
-				"commented": False,
-				"comment_form": CommentForm()
+				'cartItems': cartItems,
+				'product': product,
+				'comments': comments,
+				'commented': False,
+				'comment_form': CommentForm()
 			},
 		)
 
