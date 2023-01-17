@@ -21,7 +21,7 @@
             €{{product.price|floatformat:2|intcomma}}
         </strong></h4>
         <br>
-        <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+        <button data-bs-toggle="modal" data-bs-target="#login-or-register" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
         <a class="btn btn-outline-secondary" href="{% url 'store' %}">Back</a>
         <br><br>
         <hr>
