@@ -6,6 +6,7 @@ from django.urls import reverse
 #from autoslug import AutoSlugField
 
 #-------------------------/ Custom Model
+
 class Photo(models.Model):
     title = models.CharField(max_length=100)
     image = CloudinaryField('image')

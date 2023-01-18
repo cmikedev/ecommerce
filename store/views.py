@@ -7,7 +7,7 @@ from django.contrib import messages
 import json
 import datetime
 from .models import *
-from .forms import CommentForm
+from .forms import *
 
 
 def store(request):
@@ -26,15 +26,23 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 
-#-------------------------/ Comments CRUD
+#-------------------------/ Add Item CRUD
 
+def product_create(request):
 
+	form = NewProductForm()
+	if request.method == 'POST':
+		form = NewProductForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, ('Product updated.'))
+			return redirect('store')
+			
+	else:
+		print(form.errors)
+		#form = NewProductForm()
 
-
-
-
-
-
+	return render(request, 'store/add-product.html', {'form': form})
 
 
 
