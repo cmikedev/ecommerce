@@ -26,6 +26,19 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 
+#-------------------------/ Comments CRUD
+
+
+
+
+
+
+
+
+
+
+
+
 #-------------------------/ Custom Class
 
 class ProductDetail(generic.DetailView):
