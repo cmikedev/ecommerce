@@ -30,13 +30,14 @@ def store(request):
 
 def product_create(request):
 
-	form = NewProductForm()
-	if request.method == 'POST':
-		form = NewProductForm(request.POST)
-		if form.is_valid():
-			form.save()
-			messages.success(request, ('Product updated.'))
-			return redirect('store')
+	form = NewProductForm(request.POST, request.FILES)
+	#form = NewProductForm()
+	#if request.method == 'POST':
+		#form = NewProductForm(request.POST)
+	if form.is_valid():
+		form.save()
+		messages.success(request, ('Product updated.'))
+		return redirect('store')
 			
 	else:
 		print(form.errors)
