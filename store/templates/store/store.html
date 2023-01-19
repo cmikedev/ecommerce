@@ -2,54 +2,41 @@
 {% load static %}
 {% load humanize %}
 {% block content %}
-    <!-- testing how box looks -->
-    <!--<div class="row">
-        {% for product in products %}
-        <div class="col-lg-4">
-            <div class="box-element product">
-                <h6><strong>Product</strong></h6>
-                <hr>
-                <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>€{{product.price|floatformat:2}}</strong></h4>
-            </div>
-        </div>
-        {% endfor %}
-    </div>-->
-    <!-- testing how card looks -->
     <div id="item-selection" class="row">
         {% if user.is_superuser %}
             <div>
                 <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'product_create' %}">Add new product</a>
             </div>
-
         {% endif %}
-        <!--{% for product in products %}-->
         {% for product in object_list %}
-        <div class="col">
-            {% if user.is_superuser %}
-                <div>
-                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="#">Update</a>
-                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Delete</a>
+            <div class="col">
+                {% if user.is_superuser %}
+                    <div>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="#">Update</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Delete</a>
+                    </div>
+                {% endif %}
+                <div class="card card-element align-items-auto" style="width: 18rem;">
+                    <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}">
+                    <div class="card-body">
+                        <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
+                        <h6 class="card-title"><strong>{{product.title}}</strong></h6>
+                        <hr>
+                        <h4><strong>
+                            €{{product.price|floatformat:2|intcomma}}
+                        </strong></h4>
+                        <hr>
+                        {% if user.is_authenticated %}
+                        <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                            <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug %}">View</a>
+                        {% else %}
+                            <button data-bs-toggle="modal" data-bs-target="#login-or-register" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                            <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug %}">View</a>
+                        {% endif %}
+                    </div>
                 </div>
-            {% endif %}
-            <!--<div class="card card-element" style="width: 18rem;">-->
-            <div class="card card-element align-items-auto" style="width: 18rem;">
-                <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}">
-                <div class="card-body">
-                    <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
-                    <h6 class="card-title"><strong>{{product.title}}</strong></h6>
-                    <hr>
-                    <h4><strong>
-                        €{{product.price|floatformat:2|intcomma}}
-                    </strong></h4>
-                    <hr>
-                    <button data-bs-toggle="modal" data-bs-target="#login-or-register" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                    <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug %}">View</a>
-                </div>
+                <br>
             </div>
-            <br>
-        </div>
         {% endfor %}
     </div>
 {% endblock content %}

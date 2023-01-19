@@ -11,10 +11,15 @@ from .forms import *
 
 
 class StoreView(generic.ListView):
+
+	"""
+	This class is used to create the store view
+	"""
+
 	model = Product
 	template_name = 'store/store.html'
 
-	def store(request):
+	"""def store(self, request):
 		if request.user.is_authenticated:
 			customer = request.user.customer
 			order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -27,7 +32,7 @@ class StoreView(generic.ListView):
 
 		products = Product.objects.all()
 		context = {'products': products, 'cartItems': cartItems}
-		return render(request, 'store/store.html', context)
+		return render(request, 'store/store.html', context)"""
 
 
 """def store(request):
@@ -56,9 +61,6 @@ def product_create(request):
 	"""
 
 	form = NewProductForm(request.POST, request.FILES)
-	#form = NewProductForm()
-	#if request.method == 'POST':
-		#form = NewProductForm(request.POST)
 	if form.is_valid():
 		form.save()
 		messages.success(request, ('Product updated.'))
@@ -172,12 +174,18 @@ def checkout(request):
 
 
 def updateItem(request):
+
+	"""
+	This function updates the quantity count in the cart screen
+	"""
+
 	data = json.loads(request.body)
 	productId = data['productId']
 	action = data['action']
 	print('Action:', action)
 	print('Product:', productId)
 
+	
 	customer = request.user.customer
 	product = Product.objects.get(id=productId)
 	order, created = Order.objects.get_or_create(customer=customer, complete=False)
