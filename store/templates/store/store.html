@@ -18,8 +18,21 @@
     </div>-->
     <!-- testing how card looks -->
     <div id="item-selection" class="row">
-        {% for product in products %}
+        {% if user.is_superuser %}
+            <div>
+                <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'product_create' %}">Add new product</a>
+            </div>
+
+        {% endif %}
+        <!--{% for product in products %}-->
+        {% for product in object_list %}
         <div class="col">
+            {% if user.is_superuser %}
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="#">Update</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Delete</a>
+                </div>
+            {% endif %}
             <!--<div class="card card-element" style="width: 18rem;">-->
             <div class="card card-element align-items-auto" style="width: 18rem;">
                 <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}">

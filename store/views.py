@@ -10,7 +10,27 @@ from .models import *
 from .forms import *
 
 
-def store(request):
+class StoreView(generic.ListView):
+	model = Product
+	template_name = 'store/store.html'
+
+	def store(request):
+		if request.user.is_authenticated:
+			customer = request.user.customer
+			order, created = Order.objects.get_or_create(customer=customer, complete=False)
+			items = order.orderitem_set.all()
+			cartItems = order.get_cart_items
+		else:
+			items = []
+			order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+			cartItems = order['get_cart_items']
+
+		products = Product.objects.all()
+		context = {'products': products, 'cartItems': cartItems}
+		return render(request, 'store/store.html', context)
+
+
+"""def store(request):
 	if request.user.is_authenticated:
 		customer = request.user.customer
 		order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -23,12 +43,17 @@ def store(request):
 
 	products = Product.objects.all()
 	context = {'products': products, 'cartItems': cartItems}
-	return render(request, 'store/store.html', context)
+	return render(request, 'store/store.html', context)"""
 
 
-#-------------------------/ Add Item CRUD
+#-------------------------/ Products CRUD
 
 def product_create(request):
+
+	""" 
+	This function allows the site Administrator 
+	to add a new entry in the Product model 
+	"""
 
 	form = NewProductForm(request.POST, request.FILES)
 	#form = NewProductForm()
@@ -44,6 +69,7 @@ def product_create(request):
 		#form = NewProductForm()
 
 	return render(request, 'store/add-product.html', {'form': form})
+
 
 
 
@@ -82,6 +108,11 @@ class ProductDetail(generic.DetailView):
 		)
 
 	def post(self, request, slug, *args, **kwargs):
+
+		"""
+		This function allows a logged-in user to post a comment
+		"""
+
 		queryset = Product.objects
 		post = get_object_or_404(queryset, slug=slug)
 		comments = post.comments.filter(approved=True).order_by("date_added")
