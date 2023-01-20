@@ -11,6 +11,11 @@ from .models import *
 from .forms import *
 
 
+def welcome(request):
+	context = {}
+	return render(request, 'store/welcome.html', context)
+
+
 class StoreView(generic.ListView):
 
 	"""
@@ -34,7 +39,6 @@ class StoreView(generic.ListView):
 		products = Product.objects.all()
 		context = {'products': products, 'cartItems': cartItems}
 		return render(request, 'store/store.html', context)"""
-
 
 
 #-------------------------/ Products CRUD
