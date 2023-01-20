@@ -33,7 +33,7 @@ class Product(models.Model):
     )
 
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, default="add_slug")
+    slug = models.SlugField(max_length=200, default="detail_view")
     manufacturer = models.CharField(max_length=200)
     image = CloudinaryField('image')
     description = models.TextField(max_length=1000)
@@ -50,7 +50,7 @@ class Product(models.Model):
     #    return reverse('product:detail', args=[self.slug])
 
     def get_absolute_url(self):
-        return reverse('detail', args=[self.slug])
+        return reverse('detail', kwargs={'slug': self.slug, 'pk': self.pk})
 
 
 class Comment(models.Model):

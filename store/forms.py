@@ -7,7 +7,8 @@ from .models import Product, Comment
 class NewProductForm(forms.ModelForm):
 	class Meta:
 		model = Product
-		fields = '__all__'
+		#fields = '__all__'
+		fields = ('title', 'manufacturer', 'image', 'description', 'licence', 'price',)
 
 
 
