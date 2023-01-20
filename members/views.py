@@ -5,8 +5,6 @@ from django.contrib.auth.forms import UserCreationForm
 from store.models import Customer
 
 
-#--------- Code from Django Docs
-
 def login_user(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -14,7 +12,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('store')
+            return redirect('storelist')
         else:
             messages.success(request, ('There was an error logging in. Please check your details and try again.'))
             return redirect('login')
@@ -42,7 +40,7 @@ def register_user(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, ('Registration succesful!'))
-            redirect('store')
+            return redirect('storelist')
     else:
         form = UserCreationForm()
 

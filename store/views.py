@@ -25,7 +25,7 @@ class StoreView(generic.ListView):
 	model = Product
 	template_name = 'store/store.html'
 
-	"""def store(self, request):
+	def store(self, request):
 		if request.user.is_authenticated:
 			customer = request.user.customer
 			order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -38,7 +38,7 @@ class StoreView(generic.ListView):
 
 		products = Product.objects.all()
 		context = {'products': products, 'cartItems': cartItems}
-		return render(request, 'store/store.html', context)"""
+		return render(request, self.template_name, context)
 
 
 #-------------------------/ Products CRUD
@@ -79,7 +79,7 @@ class UpdateProductView(generic.UpdateView):
 class DeleteProductView(generic.DeleteView):
 	model = Product
 	template_name = 'store/delete-product.html'
-	success_url = reverse_lazy('store')
+	success_url = reverse_lazy('storelist')
 
 
 #-------------------------/ Custom Class

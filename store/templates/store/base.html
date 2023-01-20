@@ -79,6 +79,12 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'storelist' %}">Store <span class="sr-only">(current)</span></a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'cart' %}">Cart <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'checkout' %}">Checkout <span class="sr-only">(current)</span></a>
+                        </li>
                     </ul>
                     <div class="row ms-auto">
                         <!--
@@ -112,10 +118,10 @@
                                     <span style="color: aliceblue; padding-right: 8px;">Welcome, {{request.user}}</span>
                                     <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
                                 </div>
-                                <a href="{% url 'cart' %}">
+                                <!--<a href="{% url 'cart' %}">
                                     <img id="cart-icon" src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106754/ch3ktaeaqzodft21z9gi.png">
                                  </a>
-                                 <p id="cart-total">{{cartItems}}</p>
+                                 <p id="cart-total">{{cartItems}}</p>-->
                             {% else %}
                                 <div class="col">
                                     <!--<span style="color: aliceblue;">Welcome, Guest</span>-->
