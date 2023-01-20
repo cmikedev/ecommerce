@@ -46,8 +46,11 @@ class Product(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_urls(self):
-        return reverse('product:detail', args=[self.slug])
+    #def get_absolute_urls(self):
+    #    return reverse('product:detail', args=[self.slug])
+
+    def get_absolute_url(self):
+        return reverse('detail', args=[self.slug])
 
 
 class Comment(models.Model):

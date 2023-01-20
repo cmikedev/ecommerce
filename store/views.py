@@ -35,30 +35,22 @@ class StoreView(generic.ListView):
 		return render(request, 'store/store.html', context)"""
 
 
-"""def store(request):
-	if request.user.is_authenticated:
-		customer = request.user.customer
-		order, created = Order.objects.get_or_create(customer=customer, complete=False)
-		items = order.orderitem_set.all()
-		cartItems = order.get_cart_items
-	else:
-		items = []
-		order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
-		cartItems = order['get_cart_items']
-
-	products = Product.objects.all()
-	context = {'products': products, 'cartItems': cartItems}
-	return render(request, 'store/store.html', context)"""
-
 
 #-------------------------/ Products CRUD
 
-def product_create(request):
 
-	""" 
-	This function allows the site Administrator 
-	to add a new entry in the Product model 
-	"""
+class AddProductView(generic.CreateView):
+	model = Product
+	form_class = NewProductForm
+	template_name = 'store/add-product.html'
+
+
+"""def product_create(request):
+
+
+	#This function allows the site Administrator 
+	#to add a new entry in the Product model 
+
 
 	form = NewProductForm(request.POST, request.FILES)
 	if form.is_valid():
@@ -70,7 +62,7 @@ def product_create(request):
 		print(form.errors)
 		#form = NewProductForm()
 
-	return render(request, 'store/add-product.html', {'form': form})
+	return render(request, 'store/add-product.html', {'form': form})"""
 
 
 
