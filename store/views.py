@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.views import generic
-from django.views.generic.edit import CreateView, DeleteView, UpdateView
+#from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.http import JsonResponse
 from django.contrib import messages
+from django.urls import reverse_lazy
 import json
 import datetime
 from .models import *
@@ -69,6 +70,12 @@ class UpdateProductView(generic.UpdateView):
 	model = Product
 	template_name = 'store/update-product.html'
 	fields = ['title', 'manufacturer', 'description', 'licence', 'price',]
+
+
+class DeleteProductView(generic.DeleteView):
+	model = Product
+	template_name = 'store/delete-product.html'
+	success_url = reverse_lazy('store')
 
 
 #-------------------------/ Custom Class

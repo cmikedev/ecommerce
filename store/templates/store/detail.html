@@ -5,6 +5,13 @@
 
 {% block content %}
     <div id="product-details">
+        {% if user.is_superuser %}
+            <div>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'product_update' product.slug product.pk %}">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'product_delete' product.slug product.pk %}">Delete</a>
+            </div>
+            <br>
+        {% endif %}
         <h1>{{product.manufacturer}}</h1>
         <hr>
         <h3>{{product.title}}</h3>

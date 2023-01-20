@@ -13,7 +13,7 @@
                 {% if user.is_superuser %}
                     <div>
                         <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'product_update' product.slug product.pk %}">Update</a>
-                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Delete</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'product_delete' product.slug product.pk %}">Delete</a>
                     </div>
                 {% endif %}
                 <div class="card card-element align-items-auto" style="width: 18rem;">
