@@ -38,4 +38,4 @@ class CustomerAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'post', 'date_added', 'approved')
+    list_display = ('name', 'post', 'date_added',)

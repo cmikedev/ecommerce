@@ -77,7 +77,8 @@ class ProductDetail(generic.DetailView):
 	def get(self, request, slug, *args, **kwargs):
 		queryset = Product.objects
 		product = get_object_or_404(queryset, slug=slug)
-		comments = product.comments.filter(approved=True).order_by("date_added")
+		#comments = product.comments.filter(approved=True).order_by("date_added")
+		comments = product.comments.order_by("date_added")
 		# Populating item number in cart
 		if request.user.is_authenticated:
 			customer = request.user.customer
@@ -101,23 +102,25 @@ class ProductDetail(generic.DetailView):
 			},
 		)
 
-	def post(self, request, slug, *args, **kwargs):
+	def post(self, request, slug, pk, *args, **kwargs):
 
 		"""
 		This function allows a logged-in user to post a comment
 		"""
 
 		queryset = Product.objects
-		post = get_object_or_404(queryset, slug=slug)
-		comments = post.comments.filter(approved=True).order_by("date_added")
+		post = get_object_or_404(queryset, slug=slug, pk=pk)
+		#comments = post.comments.filter(approved=True).order_by("date_added")
+		comments = post.comments.order_by("date_added")
 		comment_form = CommentForm(data=request.POST)
 		
 		if comment_form.is_valid():
 			comment_form.instance.name = request.user.username
+			#comment = comment_form.save(commit=False)
 			comment = comment_form.save(commit=False)
 			comment.post = post
 			comment.save()
-			messages.success(request, ('Thank you. Your comment has been received as is awaiting approval.'))
+			messages.success(request, ('Thank you. Your comment has been posted.'))
 		else:
 			comment_form = CommentForm()
 			
@@ -132,7 +135,7 @@ class ProductDetail(generic.DetailView):
 			},
 		)"""
 
-		return HttpResponseRedirect(reverse('detail', args=[slug]))
+		return HttpResponseRedirect(reverse('detail', args=[slug, pk]))
 
 
 def cart(request):
