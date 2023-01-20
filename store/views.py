@@ -65,7 +65,10 @@ class AddProductView(generic.CreateView):
 	return render(request, 'store/add-product.html', {'form': form})"""
 
 
-
+class UpdateProductView(generic.UpdateView):
+	model = Product
+	template_name = 'store/update-product.html'
+	fields = ['title', 'manufacturer', 'description', 'licence', 'price',]
 
 
 #-------------------------/ Custom Class
