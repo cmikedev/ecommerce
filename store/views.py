@@ -12,7 +12,8 @@ from .forms import *
 
 
 def welcome(request):
-	context = {}
+	products = Product.objects.all()
+	context = {'products': products}
 	return render(request, 'store/welcome.html', context)
 
 
