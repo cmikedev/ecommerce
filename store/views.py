@@ -24,6 +24,7 @@ class StoreView(generic.ListView):
 	"""
 
 	model = Product
+	paginate_by = 8
 	template_name = 'store/store.html'
 
 	def store(self, request):
