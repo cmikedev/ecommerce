@@ -78,7 +78,7 @@
                     </div>
                 {% else %}-->
                 {% if user.is_authenticated %}
-                    <h3>Leave a comment:</h3>
+                    <a href="{% url 'comment_add' product.slug product.pk %}">Leave a comment</a>
                     <br>
                     <p>Posting as: {{ user.username }}</p>
                     <form method="post" style="margin-top: 1.3em;">

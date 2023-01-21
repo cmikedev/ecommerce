@@ -99,6 +99,7 @@ class AddCommentView(generic.CreateView):
 	
 	def form_valid(self, form):
 		form.instance.post_id = self.kwargs['pk']
+		form.instance.name = self.request.user.username
 		return super().form_valid(form)
 
 	success_url = reverse_lazy('storelist')

@@ -35,7 +35,8 @@ class OrderItemAdmin(admin.ModelAdmin):
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ('user', 'name')
 
-
+"""
 @admin.register(Comment)
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ('name', 'post', 'date_added',)
+"""
