@@ -4,6 +4,7 @@ from django.views import generic
 #from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.http import JsonResponse
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 import json
 import datetime
@@ -46,10 +47,12 @@ class StoreView(generic.ListView):
 #-------------------------/ Products CRUD
 
 
-class AddProductView(generic.CreateView):
+class AddProductView(SuccessMessageMixin, generic.CreateView):
 	model = Product
 	form_class = NewProductForm
 	template_name = 'store/add-product.html'
+	success_url = reverse_lazy('storelist')
+	success_message = 'New product added!'
 
 
 """def product_create(request):
@@ -72,16 +75,17 @@ class AddProductView(generic.CreateView):
 	return render(request, 'store/add-product.html', {'form': form})"""
 
 
-class UpdateProductView(generic.UpdateView):
+class UpdateProductView(SuccessMessageMixin, generic.UpdateView):
 	model = Product
 	template_name = 'store/update-product.html'
 	fields = ['title', 'manufacturer', 'description', 'licence', 'price',]
+	success_url = reverse_lazy('storelist')
+	success_message = 'Product details have successfully been updated.'
 
 
-class DeleteProductView(generic.DeleteView):
+class DeleteProductView(SuccessMessageMixin, generic.DeleteView):
 	model = Product
 	template_name = 'store/delete-product.html'
-	success_url = reverse_lazy('storelist')
 
 
 #-------------------------/ Custom Class
