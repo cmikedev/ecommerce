@@ -2,15 +2,26 @@
 {% load static %}
 
 {% block content %}
-    <h1>Delete product</h1>
-    <br>
-    <h4>Delete: {{ product.title }}</h4>
-    <br>
-    <strong>Warning - this action cannot be undone</strong>
-    <br><br>
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="submit" value="Delete" class="btn btn-danger btn-sm mt-1 mb-1">
-    </form>
-    <br><br><br>
+    {% if user.is_superuser %}
+        <h1>Delete product</h1>
+        <br>
+        <h4>Delete: {{ product.title }}</h4>
+        <br>
+        <strong>Warning - this action cannot be undone</strong>
+        <br><br>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm mt-1 mb-1">
+        </form>
+        <br><br><br>
+    {% else %}
+        <br>
+        <h1>Oops...</h1>
+        <br>
+        <p>You are not authorised to view this page. If you are think that you are seeing this
+            message in error please contact the site Administrator.
+        </p>
+        <br>
+        <a class="btn btn-outline-secondary" href="{% url 'store' %}">Back</a>
+    {% endif %}
 {% endblock content %}

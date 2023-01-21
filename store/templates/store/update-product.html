@@ -2,14 +2,22 @@
 {% load static %}
 
 {% block content %}
-    <h1>Update Product</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update" class="btn btn-outline-secondary">
-    </form>
-
-
-
-    <br><br><br>
+    {% if user.is_superuser %}
+        <h1>Update Product</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update" class="btn btn-outline-secondary">
+        </form>
+        <br><br><br>
+    {% else %}
+        <br>
+        <h1>Oops...</h1>
+        <br>
+        <p>You are not authorised to view this page. If you are think that you are seeing this
+            message in error please contact the site Administrator.
+        </p>
+        <br>
+        <a class="btn btn-outline-secondary" href="{% url 'store' %}">Back</a>
+    {% endif %}
 {% endblock content %}
