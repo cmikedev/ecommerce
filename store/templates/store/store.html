@@ -2,21 +2,25 @@
 {% load static %}
 {% load humanize %}
 {% block content %}
+    {% if user.is_superuser %}
+    <div>
+        <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'product_create' %}">Add new product</a>
+    </div>
+    {% endif %}
+    <br>
+    
+    <!-- START -->
     <div id="item-selection" class="row">
-        {% if user.is_superuser %}
-            <div>
-                <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'product_create' %}">Add new product</a>
-            </div>
-        {% endif %}
         {% for product in object_list %}
             <div class="col">
-                {% if user.is_superuser %}
-                    <div>
-                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'product_update' product.slug product.pk %}">Update</a>
-                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'product_delete' product.slug product.pk %}">Delete</a>
-                    </div>
-                {% endif %}
-                <div class="card card-element align-items-auto" style="width: 18rem;">
+                <div class="card card-element mx-auto" style="width: 18rem;">
+                    {% if user.is_superuser %}
+                        <div>
+                            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'product_update' product.slug product.pk %}">Update</a>
+                            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'product_delete' product.slug product.pk %}">Delete</a>
+                        </div>
+                        <br>
+                    {% endif %}
                     <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}">
                     <div class="card-body">
                         <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
@@ -27,9 +31,8 @@
                         </strong></h4>
                         <hr>
                         {% if user.is_authenticated %}
-                        <!--<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>-->
-                        <button data-bs-toggle="modal" data-bs-target="#add-to-cart" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-
+                            <!--<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>-->
+                            <button data-bs-toggle="modal" data-bs-target="#add-to-cart" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug product.pk %}">View</a>
                         {% else %}
                             <button data-bs-toggle="modal" data-bs-target="#login-or-register" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
@@ -41,9 +44,58 @@
             </div>
         {% endfor %}
     </div>
+    <!-- END -->
+    
+    
+
+    <!-- TEST -->
+    <!--<div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for product in object_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                {% if user.is_superuser %}
+                                    <div>
+                                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'product_update' product.slug product.pk %}">Update</a>
+                                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'product_delete' product.slug product.pk %}">Delete</a>
+                                    </div>
+                                    <br>
+                                {% endif %}
+                                <div class="image-container">
+                                    <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}"> 
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
+                                    <h6 class="card-title"><strong>{{product.title}}</strong></h6>
+                                    <hr>
+                                    <h4><strong>
+                                        €{{product.price|floatformat:2|intcomma}}
+                                    </strong></h4>
+                                    <hr>
+                                    {% if user.is_authenticated %}-->
+                                    <!--<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>-->
+                                        <!--<button data-bs-toggle="modal" data-bs-target="#add-to-cart" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                                        <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug product.pk %}">View</a>
+                                    {% else %}
+                                        <button data-bs-toggle="modal" data-bs-target="#login-or-register" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                                        <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug product.pk %}">View</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- END TEST -->
 
     <!-- Paginator -->
-    <div class="pagination">
+    <div class="pagination justify-content-center">
         <span class="step-links">
             {% if page_obj.has_previous %}
                 <a href="?page=1">&laquo; first</a>
@@ -59,6 +111,8 @@
                 <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
             {% endif %}
         </span>
-    </div><!-- End of Paginator -->
+    </div>
+    <br>
+    <!-- End of Paginator -->
 
 {% endblock content %}

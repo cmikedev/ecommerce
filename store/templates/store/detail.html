@@ -32,10 +32,10 @@
                     <br>
                     {% if user.is_authenticated %}
                         <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                        <a class="btn btn-outline-secondary" href="{% url 'store' %}">Back</a>
+                        <a class="btn btn-outline-secondary" href="{% url 'storelist' %}">Back</a>
                     {% else %}
                         <button data-bs-toggle="modal" data-bs-target="#login-or-register" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                        <a class="btn btn-outline-secondary" href="{% url 'store' %}">Back</a>
+                        <a class="btn btn-outline-secondary" href="{% url 'storelist' %}">Back</a>
                     {% endif %}
                     <br><br>
                     <hr>
