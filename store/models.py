@@ -56,7 +56,7 @@ class Product(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Product, related_name="comments", on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    body = models.TextField()
+    body = models.TextField(max_length=500)
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:

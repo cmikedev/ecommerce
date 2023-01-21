@@ -27,7 +27,8 @@ class StoreView(generic.ListView):
 	model = Product
 	paginate_by = 8
 	template_name = 'store/store.html'
-
+	
+	"""
 	def store(self, request):
 		if request.user.is_authenticated:
 			customer = request.user.customer
@@ -42,6 +43,7 @@ class StoreView(generic.ListView):
 		products = Product.objects.all()
 		context = {'products': products, 'cartItems': cartItems}
 		return render(request, self.template_name, context)
+	"""
 
 
 #-------------------------/ Products CRUD
@@ -88,13 +90,25 @@ class DeleteProductView(SuccessMessageMixin, generic.DeleteView):
 	template_name = 'store/delete-product.html'
 
 
-#-------------------------/ Custom Class
+#-------------------------/ Comments
+
+class AddCommentView(generic.CreateView):
+	model = Comment
+	template_name = 'store/add-comment.html'
+	form_class = CommentForm
+	
+	def form_valid(self, form):
+		form.instance.post_id = self.kwargs['pk']
+		return super().form_valid(form)
+
+	success_url = reverse_lazy('storelist')
+
 
 class ProductDetail(generic.DetailView):
 	model = Product
 	template_name = 'store/detail.html'
 
-	def get(self, request, slug, *args, **kwargs):
+"""	def get(self, request, slug, *args, **kwargs):
 		queryset = Product.objects
 		product = get_object_or_404(queryset, slug=slug)
 		#comments = product.comments.filter(approved=True).order_by("date_added")
@@ -125,10 +139,10 @@ class ProductDetail(generic.DetailView):
 	def post(self, request, slug, pk, *args, **kwargs):
 
 		"""
-		This function allows a logged-in user to post a comment
+"""		This function allows a logged-in user to post a comment
 		"""
 
-		queryset = Product.objects
+"""		queryset = Product.objects
 		post = get_object_or_404(queryset, slug=slug, pk=pk)
 		#comments = post.comments.filter(approved=True).order_by("date_added")
 		comments = post.comments.order_by("date_added")
@@ -143,8 +157,8 @@ class ProductDetail(generic.DetailView):
 			messages.success(request, ('Thank you. Your comment has been posted.'))
 		else:
 			comment_form = CommentForm()
-			
-		"""return render(
+"""
+"""return render(
 			request,
 			"store/detail.html",
 			{
@@ -155,7 +169,7 @@ class ProductDetail(generic.DetailView):
 			},
 		)"""
 
-		return HttpResponseRedirect(reverse('detail', args=[slug, pk]))
+#		return HttpResponseRedirect(reverse('detail', args=[slug, pk]))
 
 
 def cart(request):
