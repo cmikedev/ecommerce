@@ -5,22 +5,19 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="box-element">
-                <a class="btn btn-outline-dark" href="{% url 'storelist' %}">&#x2190; Continue Shopping</a>
-                <br>
-                <br>
+                <a style="float: left; margin: 5px;" class="btn btn-outline-secondary" href="{% url 'storelist' %}">&#x2190; Continue Shopping</a>
+                <a style="float: right; margin: 5px;" class="btn btn-outline-secondary" href="{% url 'checkout' %}">
+                  Checkout</a>
+                <br><br><br>
                 <table class="table">
                     <tr>
                         <th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>
                         <th><h5>Total:<strong> €{{order.get_cart_total|floatformat:2|intcomma}}</strong></h5></th>
-                        <th>
-                            <a style="float: right; margin: 5px;" class="btn btn-outline-secondary" href="{% url 'checkout' %}">
-                            Checkout</a>
-                        </th>
                     </tr>
                 </table>
             </div>
             <br>
-            <div class="box-element">
+            <!--<div class="box-element">
                 <div class="cart-row">
                     <div style="flex:2"></div>
                     <div style="flex:2"><strong>Item</strong></div>
@@ -43,8 +40,89 @@
                     <div style="flex:1"><p>€{{item.get_total|floatformat:2|intcomma}}</p></div>
                 </div>
                 {% endfor %}
+            </div>-->
+
+            <!-- TEST -->
+          <!--<div class="row">
+            <div class="col-lg-12">
+                <div class="box-element">
+                  <table class="table">
+                    <thead>
+                      <tr>-->
+                        <!--<th></th>-->
+                        <!--<th scope="col">Item</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Add/Remove</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for item in items %}
+                        <tr>-->
+                          <!--<th scope="row"><img class="row-image" src="{{item.product.image.url}}"></th>-->
+                          <!--<td><p>{{item.product.title}}</p></td>
+                          <td><p>€{{item.product.price|floatformat:2|intcomma}}</p></td>
+                          <td><p class="quantity">x{{item.quantity}}</p></td>
+                          <td>
+                            <div class="quantity">
+                              <img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106803/fmjm0q6kqn7tck3son8a.png">
+                              <img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106816/krr6t3dvaiy5kr7r9c39.png">
+                            </div>
+                          </td>
+                          <td><p>€{{item.get_total|floatformat:2|intcomma}}</p></td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
             </div>
+        </div>-->
+              
+          <!-- TEST END -->
         </div>
     </div>
-    <br><br><br>
+
+
+
+
+
+    <!-- START -->
+    <h5>Your items:</h5>
+    <br>
+    <div id="item-selection" class="row">
+      {% for item in items %}
+        <div class="col">
+          <div class="card card-element mx-auto" style="width: 18rem;">
+            <img class="card-img-top thumbnail" src="{{item.product.image.url}}" alt="{{product.title}}">
+            <div class="card-body">
+              <p><strong>Item: </strong>{{item.product.title}}</p>
+              <p><strong>Price: </strong>€{{item.product.price|floatformat:2|intcomma}}</p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Add/Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><p class="quantity">{{item.quantity}}</p></td>
+                    <td>
+                      <div class="quantity">
+                        <img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106803/fmjm0q6kqn7tck3son8a.png">
+                        <img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106816/krr6t3dvaiy5kr7r9c39.png">
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p><strong>Total: </strong>€{{item.get_total|floatformat:2|intcomma}}</p>
+            </div>
+          </div>
+          <br>
+        </div>
+      {% endfor %}
+    </div>
+  <!-- END -->
 {% endblock content %}
