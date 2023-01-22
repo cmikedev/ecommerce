@@ -12,6 +12,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
+            messages.success(request, ('Welcome back! You have successfully logged in.'))
             return redirect('storelist')
         else:
             messages.success(request, ('There was an error logging in. Please check your details and try again.'))

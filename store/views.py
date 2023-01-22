@@ -85,24 +85,27 @@ class UpdateProductView(SuccessMessageMixin, generic.UpdateView):
 	success_message = 'Product details have successfully been updated.'
 
 
-class DeleteProductView(SuccessMessageMixin, generic.DeleteView):
+class DeleteProductView(generic.DeleteView):
 	model = Product
 	template_name = 'store/delete-product.html'
+	success_url = reverse_lazy('storelist')
+
+
 
 
 #-------------------------/ Comments
 
-class AddCommentView(generic.CreateView):
+class AddCommentView(SuccessMessageMixin, generic.CreateView):
 	model = Comment
 	template_name = 'store/add-comment.html'
 	form_class = CommentForm
+	success_url = reverse_lazy('storelist')
+	success_message = 'Thank you. Your comment has been posted.'
 	
 	def form_valid(self, form):
 		form.instance.post_id = self.kwargs['pk']
 		form.instance.name = self.request.user.username
 		return super().form_valid(form)
-
-	success_url = reverse_lazy('storelist')
 
 
 class ProductDetail(generic.DetailView):
