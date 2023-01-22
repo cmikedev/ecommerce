@@ -12,10 +12,13 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, ('Welcome back! You have successfully logged in.'))
+            messages.success(request, ('Welcome back! \n' +
+                                       'You have successfully logged in.'))
             return redirect('storelist')
         else:
-            messages.success(request, ('There was an error logging in. Please check your details and try again.'))
+            messages.success(request, ('There was an error logging in. \n' +
+                                       'Please check your details and \n' +
+                                       'try again.'))
             return redirect('login')
     else:
         return render(request, 'authenticate/login.html', {})
@@ -32,10 +35,8 @@ def register_user(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            #--------- Adding new registered user to Customer model
             new_user = form.save()
             Customer.objects.create(user=new_user)
-            #---------------------------------------
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
@@ -46,4 +47,3 @@ def register_user(request):
         form = UserCreationForm()
 
     return render(request, 'authenticate/register_user.html', {'form': form})
-    

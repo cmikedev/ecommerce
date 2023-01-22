@@ -5,29 +5,39 @@ from .models import Product, Comment
 
 
 class NewProductForm(forms.ModelForm):
-	class Meta:
-		model = Product
-		#fields = '__all__'
-		fields = ('title', 'manufacturer', 'image', 'description', 'licence', 'price',)
-
+    class Meta:
+        model = Product
+        fields = (
+            'title',
+            'manufacturer',
+            'image',
+            'description',
+            'licence',
+            'price',
+            )
 
 
 class NewUserForm(UserCreationForm):
-	email = forms.EmailField(required=True)
+    email = forms.EmailField(required=True)
 
-	class Meta:
-		model = User
-		fields = ("username", "email", "password1", "password2")
+    class Meta:
+        model = User
+        fields = (
+            "username",
+            "email",
+            "password1",
+            "password2"
+            )
 
-	def save(self, commit=True):
-		user = super(NewUserForm, self).save(commit=False)
-		user.email = self.cleaned_data['email']
-		if commit:
-			user.save()
-		return user
+    def save(self, commit=True):
+        user = super(NewUserForm, self).save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+        return user
 
 
 class CommentForm(forms.ModelForm):
-	class Meta:
-		model = Comment
-		fields = ('body',)
+    class Meta:
+        model = Comment
+        fields = ('body',)
