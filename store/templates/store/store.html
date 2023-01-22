@@ -9,7 +9,6 @@
     {% endif %}
     <br>
     
-    <!-- START -->
     <div id="item-selection" class="row">
         {% for product in object_list %}
             <div class="col">
@@ -31,7 +30,6 @@
                         </strong></h4>
                         <hr>
                         {% if user.is_authenticated %}
-                            <!--<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>-->
                             <button data-bs-toggle="modal" data-bs-target="#add-to-cart" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug product.pk %}">View</a>
                         {% else %}
@@ -44,55 +42,6 @@
             </div>
         {% endfor %}
     </div>
-    <!-- END -->
-    
-    
-
-    <!-- TEST -->
-    <!--<div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3 left">
-                <div class="row">
-                    {% for product in object_list %}
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                {% if user.is_superuser %}
-                                    <div>
-                                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'product_update' product.slug product.pk %}">Update</a>
-                                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'product_delete' product.slug product.pk %}">Delete</a>
-                                    </div>
-                                    <br>
-                                {% endif %}
-                                <div class="image-container">
-                                    <img class="card-img-top thumbnail" src="{{product.image.url}}" alt="{{product.title}}"> 
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title"><strong>{{product.manufacturer}}</strong></h4>
-                                    <h6 class="card-title"><strong>{{product.title}}</strong></h6>
-                                    <hr>
-                                    <h4><strong>
-                                        €{{product.price|floatformat:2|intcomma}}
-                                    </strong></h4>
-                                    <hr>
-                                    {% if user.is_authenticated %}-->
-                                    <!--<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>-->
-                                        <!--<button data-bs-toggle="modal" data-bs-target="#add-to-cart" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                                        <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug product.pk %}">View</a>
-                                    {% else %}
-                                        <button data-bs-toggle="modal" data-bs-target="#login-or-register" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                                        <a class="btn btn-outline-secondary" href="{% url 'detail' product.slug product.pk %}">View</a>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <!-- END TEST -->
 
     <!-- Paginator -->
     <div class="pagination justify-content-center">
