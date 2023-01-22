@@ -1,6 +1,7 @@
 {% extends 'store/base.html' %}
 {% load static %}
 {% load humanize %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <div class="row">
@@ -41,37 +42,47 @@
                 <br>
                 <h4>Comments...</h4>
                 <br>
+                <!-- COMMENT SECTION -->
                 {% if user.is_authenticated %}
                     <a href="{% url 'comment_add' product.slug product.pk %}">Leave a comment</a>
                     <br>
                 {% else %}
                     <p>
-                        You must be signed-in to comment. Please 
-                        <a href="{% url 'login' %}">sign in</a> or 
-                        <a href="{% url 'register' %}">register</a>
+                    You must be signed-in to comment. Please 
+                    <a href="{% url 'login' %}">sign in</a> or 
+                    <a href="{% url 'register' %}">register</a>
                     </p>
                 {% endif %}
                 <br>
+                <!-- Show Comments -->
                 {% if not product.comments.all %}
                     No comments yet...Be the first to comment!
                     <br><br>
                 {% else %}
                     {% for comment in product.comments.all %}
-                        <strong>
-                            {{comment.name}} - 
-                            {{comment.date_added}}
-                        </strong>
-                        <br>
-                        {{comment.body}}
-                        <br><br>
+                    <strong>
+                    {{comment.name}} - 
+                    {{comment.date_added}}
+                    </strong>
+                    <br>
+                    {{comment.body}}
+                    <br><br>
                     {% endfor %}
                 {% endif %}
+                <!-- Comment Form -->
+                <!--{% if commented %}
+                <div class="alert alert-success alert-dismissible" role="alert">
+                Your comment is awaiting approval
+                </div>
+                {% else %}-->
                 {% if user.is_authenticated %}
                     <a href="{% url 'comment_add' product.slug product.pk %}">Leave a comment</a>
                     <br>
                 {% endif %}
+                <!--{% endif %}-->
+                <br><br>
             </div>
         </div>
     </div>
     <br>
-{% endblock content%}
+{% endblock content %}
