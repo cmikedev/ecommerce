@@ -1,4 +1,4 @@
-/*----------------------Custom */
+/*----------------------Custom CSS */
 
 #welcome-image {
 	width: 20px;
@@ -16,14 +16,9 @@
 	padding: 10px;
 }
 
-
 .image-container {
     position: relative;
 }
-
-/*#copyright {
-	background-color: rgba(0, 0, 0, 0.2);
-}*/
 
 .new-user {
 	margin-left: 5px;
@@ -32,8 +27,7 @@
 }
 
 
-
-/*----------------------Template CSS */
+/*----------------------Template CSS from Dennis Ivy's tutorial. See Readme.md */
 
 body{
 	background-color: hsl(0, 0%, 98%);

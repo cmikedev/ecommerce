@@ -68,7 +68,7 @@
 	<!-- Script from PayPal Developer Website -->
 	<script>
         // Render the PayPal button into #paypal-button-container
-		var total = '{{order.get_cart_total}}'
+		var total = '{{order.get_cart_total}}';
 
         paypal.Buttons({
 
@@ -87,7 +87,7 @@
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
                     // Show a success message to the buyer
-                    submitFormData()
+                    submitFormData();
                 });
             }
 
@@ -96,45 +96,45 @@
 
 	<!-- The below code was taken and amended from Dennis Ivy's tutorial. See Readme.md -->
 	<script type="text/javascript">
-		var shipping = '{{order.shipping}}'
-		var user = '{{request.user}}'
+		var shipping = '{{order.shipping}}';
+		var user = '{{request.user}}';
 
-		var form = document.getElementById('form')
+		var form = document.getElementById('form');
 		form.addEventListener('submit', function(e){
-			e.preventDefault()
-			console.log('Form Submitted...')
+			e.preventDefault();
+			console.log('Form Submitted...');
 			document.getElementById('form-button').classList.add("hidden");
 			document.getElementById('payment-info').classList.remove("hidden");
-		})
+		});
 
 		function submitFormData(){
-			console.log('Payment button clicked')
+			console.log('Payment button clicked');
 
 			var userFormData = {
 				'name':null,
 				'email':null,
 				'total':total,
-			}
+			};
 
 			var shippingInfo = {
 				'address':null,
 				'city':null,
 				'state':null,
 				'zipcode':null,
-			}
+			};
 			
-			shippingInfo.address = form.address.value
-			shippingInfo.city = form.city.value
-			shippingInfo.state = form.state.value
-			shippingInfo.zipcode = form.zipcode.value
+			shippingInfo.address = form.address.value;
+			shippingInfo.city = form.city.value;
+			shippingInfo.state = form.state.value;
+			shippingInfo.zipcode = form.zipcode.value;
 
-			userFormData.name = form.name.value
-			userFormData.email = form.email.value
+			userFormData.name = form.name.value;
+			userFormData.email = form.email.value;
 			
-			console.log('Shipping Info:', shippingInfo)
-			console.log('User Info:', userFormData)
+			console.log('Shipping Info:', shippingInfo);
+			console.log('User Info:', userFormData);
 
-			var url = '/process_order/'
+			var url = '/process_order/';
 			fetch(url, {
 				method:'POST',
 				headers:{
@@ -151,12 +151,12 @@
 				console.log('Success:', data);
 				alert('Transaction completed');
 
-				cart = {}
-				document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+				cart = {};
+				document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/";
 
-				window.location.href = "{% url 'storelist' %}"
+				window.location.href = "{% url 'storelist' %}";
 
-			})
+			});
 		}
 	</script>
 
