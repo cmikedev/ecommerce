@@ -26,14 +26,16 @@
                         <a href="{% url 'storelist' %}" class="btn btn-outline-secondary">Browse</a>
                     </div>
                 </div>
-                <div class="col">
-                    <p><strong>Registration</strong> is free and easy and allows you to maintain your cart 
-                        and ask questions/comment on any bike you're interested in.</p>
-                    <div>
-                        <br>
-                        <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register</a>
+                {% if not user.is_authenticated %}
+                    <div class="col">
+                        <p><strong>Registration</strong> is free and easy and allows you to maintain your cart 
+                            and ask questions/comment on any bike you're interested in.</p>
+                        <div>
+                            <br>
+                            <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register</a>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             </div>
         </div>
         <br>
