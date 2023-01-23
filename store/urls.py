@@ -32,10 +32,11 @@ urlpatterns = [
         ),
     path('cart/', views.cart, name='cart'),
     path('checkout/', views.checkout, name='checkout'),
-    path('update_item/', views.updateItem, name='update_item'),
+    path('update_item/', views.update_item, name='update_item'),
     path(
         'process_order/',
-        views.processOrder,
+        views.process_order,
         name='process_order'
         ),
+    path('payment/', views.payment_received, name='payment')
 ]

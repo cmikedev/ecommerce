@@ -104,7 +104,7 @@ def checkout(request):
     return render(request, 'store/checkout.html', context)
 
 
-def updateItem(request):
+def update_item(request):
 
     """
     This function updates the quantity count in the cart screen
@@ -141,7 +141,7 @@ def updateItem(request):
     return JsonResponse('Item was added', safe=False)
 
 
-def processOrder(request):
+def process_order(request):
     transaction_id = datetime.datetime.now().timestamp()
     data = json.loads(request.body)
 
@@ -171,3 +171,7 @@ def processOrder(request):
         print('User is not logged in')
 
     return JsonResponse('Payment submitted..', safe=False)
+
+
+def payment_received(request):
+    return render(request, 'store/payment.html', {})
