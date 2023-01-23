@@ -1,108 +1,201 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Moto Madness
+Battleship is a single-player python version of the classic turn-based guess game.</br >
+</br > 
 
-Welcome cmikedev,
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/am-i-responsive.png?raw=true)</br >
+</br >
+Image created using [Am I responsive](https://ui.dev/amiresponsive)</br >
+</br >
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### Deployed Website
+A link to the deployed project via the Heroku app can be found [here](https://battleship-cmikedev.herokuapp.com/).
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+### Repository
+The GitHub repository can be found [here](https://github.com/cmikedev/battleship).
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+____
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## 1. Design
 
-A blue button should appear to click: _Make Public_,
+### 1.1 Structure
 
-Another blue button should appear to click: _Open Browser_.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/battleship-flowchart.png?raw=true)</br >
+</br>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+1. The user inputs their desired difficulty level.
+2. The gameboard's grid, enemy ships and the number of missiles are determined by the difficulty level selected.
+3. An enemy and guess (user) gameboards of grid N x N are generated.
+4. The ships are generated and placed on the enemy gameboard.
+5. When the user enters their row and column guess, the guess gameboard stores these coordinates - this is not visible to the user.
+6. If the coordinates on the user guess gameboard matches those of the visible enemy one, the gameboard reprints showing an "X" within the grid to denote a hit.
+7. If the coordinates don't match, the gameboard reprints showing a "-" to denote a miss.
+8. If the number of ships hit equals the number of ships generated and the number of missiles remaining is not equal to 0, then the user wins.
+9. If the number of ships hit is less than the number generated and the number of missiles is equal to 0, the user loses.</br >
+</br >
 
-To log into the Heroku toolbelt CLI:
+### 1.2 Modules Used
+* The __sleep__ function is imported from Python's [time](https://docs.python.org/3/library/time.html) module in order to stagger displayed text (see section 2.1) and create a delay before the running of selected loops.
+* The __randint__ function is imported from Python's [random](https://docs.python.org/3/library/random.html) module in order to randomly generate the position of the enemy ships on the game board.</br >
+</br >
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## 2. Features
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### 2.1 The Introduction Screen
+When the page loads the user is presented with an introduction providing a brief background story. The purpose of this is to provide a sense of immersion in the game.
+* The text loading is staggered in order to make it look like the user is awaiting receipt of a message from fleet Command. This is done to create a further sense of immersion by linking the user with an imaginery third party, a Fleet Command.</br >
+</br >
 
-------
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/introduction.png?raw=true)</br >
+</br >
 
-## Release History
+* The user is then provided with a prompt move on to the next screen allowing them as much time as is required to read the introduction screen.</br >
+</br >
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### 2.2 The Instructions Screen
+* The game instructions are laid out for the user. Again, they will be provided with a prompt to move onto the next screen in their own time.
+* The user will not need to come back to this screen as simplified instructions will be provided on the game screen.</br >
+</br >
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/instructions.png?raw=true)</br >
+</br >
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### 2.3 The Difficulty Screen
+* The Difficulty Screen provides the user the opportunity to provide input into the game. The four difficuly levels are explained and the user is prompted to choose.</br >
+</br >
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/difficulty.png?raw=true)</br >
+</br >
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+* Depending on the difficulty level chosen, from 'Easy' to 'Insane', the board size will increase as will the number of enemy vessels. The number of missiles, while increasing in number, will either decrease proprotionately to the board size or remain the same (in the case of 'Medium' and 'Hard').</br >
+</br >
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### 2.4 The Game Board
+When the user has selected their desired difficulty level, the game board will be generated with its size corresponding to the diffficulty chosen.
+* The user is once again provided with instructions on how to play.
+* The game board grids are visualised (the image below shows a 9x9 grid as per 'Insane' difficulty level).
+* The number of enemy ships and the number destroyed will be displayed (again, based on difficulty level chosen).
+* The missiles (turns).</br >
+</br >
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/gameboard.png?raw=true)</br >
+</br >
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* The user is asked to input their guess by way of selected the numerical row and aphabetical column. These coordinates represent a place on the grid.
+* An enemy ship occupies one grid space. If the user's guess corresponds to the coordinates of the enemy ship, the enemy ship is destroyed.
+* The board will then be reprinted displaying an "X" in the grid where a ship was destroyed or a "-" to denote a miss.
+* The number of enemy ships and missiles remaining displays are then updated as the board reprints.</br >
+</br >
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/ships-missiles-remaining.png?raw=true)</br >
+</br >
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* If the user has failed to destroy all ships by the time their missiles remaining reaches 5, the missiles remaining message will update to warn the user that they are running low on ammo.</br >
+</br >
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/low-ammo-warning.png?raw=true)</br >
+</br >
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### 2.5 End Game
+The game can end one of two ways:
+* If the user destroys all of the enemy vessels before they run out of missiles they win the game. The game will end a new screen will load informing them of their victory.</br >
+</br >
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/game-won.png?raw=true)</br >
+</br >
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* If the user runs out of missiles and there are still enemy vessels remaining, the lose the game. The game will end a new screen will load informing them of their defeat.</br >
+</br >
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/game-lost.png?raw=true)</br >
+</br >
 
-------
 
-## FAQ about the uptime script
+## 3. Testing
 
-**Why have you added this script?**
+### 3.1 General Testing
+During the development of the project, much of the functions were initially written using the [Replit Python Online Compiler](https://replit.com/lm/python3). This allowed for testing and editing of smaller sctions of code before they were added to the main file. Individual functions were tested in the main file through the GitPod terminal by adding them to a main function.</br >
+</br >
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/main.png?raw=true)</br >
+</br >
 
-**How will this affect me?**
+This allowed for the entirety of the game running order to be tested or just individual functions. The majority of the errors returned during the testing stage related to items being out of range or handling the input of blank/incorrect data. An example of two of the latter errors is shown below:
+* The first, where a user is asked to please enter a ship row, allowed for the return key to be pressed.
+* The second, where a user is asked to enter a ship column throws up a <mark style="background-color: grey">ValueError</mark> when a return key is pressed.
+In both instances a message informing the user that their input was incorrect and prompting them to enter the correct input should have been returned.</br >
+</br >
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/errors.png?raw=true)</br >
+</br >
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### 3.2 PEP8 Testing
+The [PEP8 Online](http://pep8online.com/) validator provided visibility for any errors within the code. The initial validation run flagged numerous amber and red errors relating to whitespace, no lines after functions, missing parentheses and lines of code that were too long. Over the course of several more validation runs, these errors were eliminated and the code as it is shows no errors.</br >
+</br >
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/pep8-result.png?raw=true)</br >
+</br >
 
-**So….?**
+### 3.3 Bugs
+All identified bugs have been fixed including the example shown in section 3.1 above.</br >
+</br >
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+## 4. Deployment
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### 4.1 Deploying the repository via Heroku
+* The app was created using Heroku via the following steps:
+    * On the https://dashboard.heroku.com/apps page, click <mark style="background-color: grey">New</mark> and then select <mark style="background-color: grey">Create New App</mark> from the drop-down menu.
+    * When the next page loads insert the <mark style="background-color: grey">App name</mark> and <mark style="background-color: grey">Choose a region</mark>. The click <mark style="background-color: grey">Create app</mark>
+    * In the settings tab click on <mark style="background-color: grey">Reveal Config Vars</mark> and add the key <mark style="background-color: grey">Port</mark> and the value <mark style="background-color: grey">8000</mark>. There were no credentials required for this app.
+    * Below this click <mark style="background-color: grey">Add buildpack</mark> and choose <mark style="background-color: grey">python</mark> and <mark style="background-color: grey">nodejs</mark> in that order.</br >
+    </br >
+* To deploy the Heroku app:
+    * Click on the <mark style="background-color: grey">Deploy</mark> tab and select <mark style="background-color: grey">Github-Connect to Github</mark>.
+    * Enter the repository name and click <mark style="background-color: grey">Search</mark>.
+    * Choose the repository that holds the correct files and click <mark style="background-color: grey">Connect</mark>.
+    * A choice is offered between manual or automatic deployment whereby the app is updated when changes are pushed to GitHub. For this app automatic was selected.
+    * Once the deployment method has been chosen the app will be built and can be launched by clicking the <mark style="background-color: grey">Open app</mark> button at the top of the page.<br />
+    <br />
+![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/heroku-deployment.png?raw=true)</br >
+</br >
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### 4.2 GitHub
+#### Forking the repository
+* The GitHub repository can be forked to make a copy of the original. This copy can then be viewed or changed without affecting the original repository via the following steps:
+    * In the Respository section, select the [battleship](https://github.com/cmikedev/battleship) repository
+    * At the top right of the page select <mark style="background-color: grey">fork</mark> from the menu below your profile
+    * A copy of the repository will now be created in your account
 
-**Anything more?**
+#### Creating a local clone
+* To create a local clone via GitHub:
+    * In the Respository section, select the [battleship](https://github.com/cmikedev/battleship) repository
+    * From the horizontal menu above the repository contents select <mark style="background-color: grey">Code</mark>
+    * __Copy__ the link that that is shown
+    * Within __Gitpod__ change the directory to where you would like the location of the cloned directory to be
+    * Type __git clone__ and paste the link that you copied
+    * Press <mark style="background-color: grey">Enter</mark> and the local clone will be created<br />
+    <br />
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
 
-Happy coding!
+
+## 5. Credits
+
+* [stackoverflow](https://stackoverflow.com/questions/60405812/can-you-put-a-operator-into-a-list-comprehension) was referenced for guidance on using operators within list comprehension.
+* [stackoverflow](https://stackoverflow.com/questions/68716514/python-sleep-function-not-working-as-expected) was referenced for guidance on the sleep function from the time import.
+* [scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/) provided a solution to the issue of clearing the board depending on whether the user's os was MAC, Windows or Linux.
+* [trinket](https://trinket.io/python/051179b6d3) provided research on simple Battleship game-logic and creating enemy ships.
+* [Austin Montgomery](https://bigmonty12.github.io/battleship) provided examples for creating the board, enemy ships and game logic.
+* [codecademy](https://discuss.codecademy.com/t/excellent-battleship-game-written-in-python/430605) Example of a Battleship game using classes.
+* [mailpraveens](https://gist.github.com/mailpraveens/6167921) Example of a Battleship game code created from a CodeCademy tutorial.
+* [gbrough](https://github.com/gbrough/battleship/blob/main/single_player.py) provided a solution to the create board problem with the rows numbered and creating the ship locations. Code from gbrough has been referenced in the run.py file.
+* [programiz](https://www.programiz.com/article/flowchart-programming) for guidance on creating the flowchart.
+
+----
+
+## 6. Acknowledgements
+I would like to thank my course mentor Harry Dhillon for providing guidance on this project.
