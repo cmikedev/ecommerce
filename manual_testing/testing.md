@@ -7,7 +7,8 @@ The purpose of this section is to visually document the manual testing carried o
 2. HTML W3C Testing
 3. CSS W3C Testing
 4. JavaScript JShint Testing
-5. Responsiveness Testing
+5. Lighthouse Testing
+6. Responsiveness Testing
 
 
 ## 1. Python PEP8 Testing
@@ -168,7 +169,25 @@ The JavaScript was tested using [JShint](https://jshint.com/). In each instance 
 </br >
 
 
-## 5. Responsiveness Testing
+## 5. Lighthouse Testing
+
+Lighthouse through [web.dev](https://pagespeed.web.dev/) was used to test the site for: 
+* Performance
+* Accessibility
+* Best Practice
+* SEO
+
+Of each page, the store.html had the poorest overall scores, in particular the performance. This performance was particularly impacted on mobile devices as shown here.
+
+![image]()</br >
+</br >
+
+The images had an adverse effect on performance.
+
+![image]()</br >
+</br >
+
+## 6. Responsiveness Testing
 
 * The responsiveness tests were carried out manually using Google Chrome's [Inspect Function](https://developer.chrome.com/docs/devtools/open/) with also some real world testing on actual devices. Some of the devices tested included (but not limited to):
     * Nest Hub Max
