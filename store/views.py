@@ -71,9 +71,7 @@ class ProductDetail(generic.DetailView):
 """
 The four functions ('cart', 'checkout', 'update_item' and
 'process_order') have been taken from Dennis Ivy's tutorial.
-There has been some minor modification in the form of
-utilising the custom Product model but overall the functions
-remain unchanged from their original state. Please see README.md
+Please see README.md
 """
 
 
