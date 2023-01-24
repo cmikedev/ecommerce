@@ -7,7 +7,8 @@ from django.urls import reverse
 
 class Photo(models.Model):
     """
-    This allows for the uploading of photos to Cloudinary
+    This is a custom model which allows for
+    the uploading of photos to Cloudinary
     """
     title = models.CharField(max_length=100)
     image = CloudinaryField('image')
@@ -17,6 +18,9 @@ class Photo(models.Model):
 
 
 class Customer(models.Model):
+    """
+    Model taken from Dennis Ivy's tutorial - see README.md
+    """
     user = models.OneToOneField(
             User, null=True, blank=True, on_delete=models.CASCADE
         )
@@ -29,7 +33,8 @@ class Customer(models.Model):
 
 class Product(models.Model):
     """
-    This is a wholly custom model
+    This is a custom model with full front-end CRUD
+    capability
     """
     licence_type = (
         ("a1", "A1"),
@@ -60,6 +65,9 @@ class Product(models.Model):
 
 
 class Comment(models.Model):
+    """
+    This is a custom model
+    """
     post = models.ForeignKey(
             Product, related_name="comments", on_delete=models.CASCADE
         )
@@ -75,6 +83,9 @@ class Comment(models.Model):
 
 
 class Order(models.Model):
+    """
+    Model taken from Dennis Ivy's tutorial - see README.md
+    """
     customer = models.ForeignKey(
             Customer, on_delete=models.SET_NULL, null=True, blank=True
         )
@@ -99,6 +110,9 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
+    """
+    This is a custom model
+    """
     transaction_id = models.ForeignKey(
             Order,
             related_name='orders_table',
@@ -142,6 +156,9 @@ class OrderItem(models.Model):
 
 
 class ShippingAddress(models.Model):
+    """
+    Model taken from Dennis Ivy's tutorial - see README.md
+    """
     customer = models.ForeignKey(
             Customer,
             on_delete=models.SET_NULL,

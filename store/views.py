@@ -68,6 +68,15 @@ class ProductDetail(generic.DetailView):
     template_name = 'store/detail.html'
 
 
+"""
+The four functions ('cart', 'checkout', 'update_item' and
+'process_order') have been taken from Dennis Ivy's tutorial.
+There has been some minor modification in the form of
+utilising the custom Product model but overall the functions
+remain unchanged from their original state. Please see README.md
+"""
+
+
 def cart(request):
     if request.user.is_authenticated:
         customer = request.user.customer
@@ -79,7 +88,7 @@ def cart(request):
         cartItems = order.get_cart_items
     else:
         items = []
-        order = {'get_cart_total': 0, 'get_cart_items': 0,}
+        order = {'get_cart_total': 0, 'get_cart_items': 0, }
         cartItems = order['get_cart_items']
 
     context = {'items': items, 'order': order, 'cartItems': cartItems}
