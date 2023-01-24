@@ -93,16 +93,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'store' %}">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{% url 'store' %}" aria-label="Go to the homepage">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'storelist' %}">Store <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{% url 'storelist' %}" aria-label="Visit the store">Store <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'cart' %}">Cart <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{% url 'cart' %}" aria-label="Go to your cart">Cart <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'checkout' %}">Checkout <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{% url 'checkout' %}" aria-label="Go to checkout">Checkout <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                     <div class="row ms-auto">
@@ -110,14 +110,14 @@
                             {% if user.is_authenticated %}
                                 <div class="col">
                                     <span style="color: aliceblue; padding-right: 8px;">Welcome, {{request.user}}</span>
-                                    <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+                                    <a href="{% url 'logout' %}" class="btn btn-secondary" aria-label="Logout">Logout</a>
                                 </div>
                             {% else %}
                                 <div class="col">
-                                    <a href="{% url 'login' %}" class="btn btn-outline-light new-user">Login</a>
+                                    <a href="{% url 'login' %}" class="btn btn-outline-light new-user" aria-label="Login">Login</a>
                                 </div>
                                 <div class="col">
-                                    <a href="{% url 'register' %}" class="btn btn-warning new-user">Register</a>
+                                    <a href="{% url 'register' %}" class="btn btn-warning new-user" aria-label="Register an account">Register</a>
                                 </div>
                             {% endif %}
                        </div>
@@ -147,9 +147,12 @@
         <footer class="bg-dark mt-auto text-center text-white">
             <div class="container p-4 pb-0">
                 <section class="mb-4">
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" role="button"><i class="fab fa-facebook"></i></a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" role="button"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" role="button"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" role="button"
+                    aria-label="Visit our Facebook page (opens in a new tab)"><i class="fab fa-facebook"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" role="button"
+                    aria-label="Visit our Twitter page (opens in a new tab)"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" role="button"
+                    aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram"></i></a>
                 </section>
             </div>
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
