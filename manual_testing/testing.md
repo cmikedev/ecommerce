@@ -179,12 +179,10 @@ Lighthouse through [web.dev](https://pagespeed.web.dev/) was used to test the si
 
 Of each page, the store.html had the poorest overall scores, in particular the performance. This performance was particularly impacted on mobile devices as shown here.
 
-![image]()</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/lighthouse/results.png?raw=true)</br >
 </br >
 
-The images had an adverse effect on performance.
-
-![image]()</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/lighthouse/performance.png?raw=true)</br >
 </br >
 
 ## 6. Responsiveness Testing
