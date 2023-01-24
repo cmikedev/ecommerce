@@ -79,11 +79,29 @@ ___
 
 A user can view all of the products in the Store. Eight products appear on each page. The user can navigate to different pages to see all of the products.
 
-If a user clicks on "Info", they will be directed to a Detail page which contains more details about the product they are interested in.</br>
+___
+User Story:
+
+* As a Site User I can open up a product page so that I can view more details
+    * User can select a product and be directed to a details page
+    * User is presented with expanded details of the product on a dedicated page
+___
+
+If a user clicks on "Info", they will be directed to a Detail page which contains more details about the product they are interested in as well as the ability to read and post comments.</br>
 </br>
 
-![image]()</br>
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/7%20-%20view-products.png?raw=true)</br>
 </br>
+
+___
+User Story:
+
+As a Site User I can leave comments under a product so that I can ask questions or leave a review
+
+* User can view comments pertaining to a product
+    * User if authenticated can add a comment
+    * User is notified that their comment has been posted
+___
 
 
 
