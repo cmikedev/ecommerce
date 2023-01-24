@@ -37,6 +37,54 @@ User Story:
     * User is made aware of their logout status
 ___
 
+A site visitor can click on the "Register" button on the navbar.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/1%20-%20registration.png?raw=true)</br>
+</br>
+
+The visitor will then be directed to a registration form. The user needs to choose a name and a password and press "Submit".</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/2%20-%20registration.png?raw=true)</br>
+</br>
+
+
+If their submission is successful they will be redirected to the Store page whereby the "Login" and "Register" buttons on the top right of the navbar will have changed to reflect their loged in status.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/3%20-%20registration-successful.png?raw=true)</br>
+</br>
+
+To logout, a user just needs to click on the "Logout" button.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/5%20-%20logout.png?raw=true)</br>
+</br>
+
+The user will then be redirected to the Welcome page and they will receive confirmation of their logged out status via a message and that the buttons on the navbar will once again have changed.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/6%20-%20logout-successful.png?raw=true)</br>
+</br></br></br>
+
+
+___
+User Story:
+
+* As a Site User I can view a list of products for sale so that I can select one to view
+    * User can view and browse all available products
+    * User can select a product and view further details
+___
+
+A user can view all of the products in the Store. Eight products appear on each page. The user can navigate to different pages to see all of the products.
+
+If a user clicks on "Info", they will be directed to a Detail page which contains more details about the product they are interested in.</br>
+</br>
+
+![image]()</br>
+</br>
+
 
 
 
