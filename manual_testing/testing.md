@@ -17,33 +17,33 @@ All Python code was returned error free and in accordance with PEP8.
 ### Members App:
 
 * Members - urls.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/python/1%20-%20members%20-%20urls.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/1%20-%20members%20-%20urls.png?raw=true)</br >
 </br >
 
 * Members - views.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/python/2%20-%20members%20-%20views.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/2%20-%20members%20-%20views.png?raw=true)</br >
 </br >
 
 ### Store App:
 
 * Store - models.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/python/3%20-%20store%20-%20models.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/3%20-%20store%20-%20models.png?raw=true)</br >
 </br >
 
 * Store - admin.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/python/4%20-%20store%20-%20admin.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/4%20-%20store%20-%20admin.png?raw=true)</br >
 </br >
 
 * Store - forms.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/python/5%20-%20store%20-%20forms.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/5%20-%20store%20-%20forms.png?raw=true)</br >
 </br >
 
 * Store - views.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/python/6%20-%20store%20-%20views.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/6%20-%20store%20-%20views.png?raw=true)</br >
 </br >
 
 * Store - urls.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/python/7%20-%20store%20-%20urls.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/7%20-%20store%20-%20urls.png?raw=true)</br >
 </br >
 
 
@@ -55,83 +55,79 @@ Each page returned errors which related to Django conventions. For example the v
 ### Members App:
 
 * Login page - login.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/html/1%20-%20w3c%20-%20login.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/1%20-%20w3c%20-%20login.png?raw=true)</br >
 </br >
 
 * Registration page - register_user.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual%20testing/images/html/2%20-%20w3c%20-%20register.png?raw=true)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/2%20-%20w3c%20-%20register.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Base page - head - base.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/3%20-%20w3c%20-%20base%20-%20head.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Base page - body - base.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/3.1%20-%20w3c%20-%20base%20-%20body%20-%201.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Base page - body (cont.) - base.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/3.2%20-%20w3c%20-%20base%20-%20body%20-%202.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Welcome page - welcome.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/4%20-%20w3c%20-%20welcome.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Store page - store.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/5%20-%20w3c%20-%20store.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Store page (cont.) - store.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/5.1%20-%20w3c%20-%20store.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Detail page - detail.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/6%20-%20w3c%20-%20detail.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Detail page (cont.) - detail.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/6.1%20-%20w3c%20-%20detail.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Detail page (cont.) - detail.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/6.2%20-%20w3c%20-%20detail.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Comment page - add-comment.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/7%20-%20w3c%20-%20add-comment.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Cart page - cart.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/8%20-%20w3c%20-%20cart.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Checkout page - checkout.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/9%20-%20w3c%20-%20checkout.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Checkout page (cont.) - checkout.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/9.1%20-%20w3c%20-%20checkout.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Payment page - payment.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/10%20-%20w3c%20-%20payment.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Add product page - add-product.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/11%20-%20w3c%20-%20add-product.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* Update product page - update-product.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/12%20-%20w3c%20-%20update-product.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
-</br >
-
-* Login page - login.html
-![image]()</br >
+* Delete product page - delete-product.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/13%20-%20w3c%20-%20delete-product.png?raw=true)</br >
 </br >
 
 
