@@ -103,8 +103,30 @@ As a Site User I can leave comments under a product so that I can ask questions 
     * User is notified that their comment has been posted
 ___
 
+On the Details page a user will be able to see any comments that have been posted.</br>
+</br>
 
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/8%20-%20comment.png?raw=true)</br>
+</br>
 
+The option to add a comment will only be visible for authenticated users - see Authentication Testing section below.
+
+By selecting to add a comment an authenticated user will be directed to a form to post their comment under their username.
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/9%20-%20comment-submit.png?raw=true)</br>
+</br>
+
+Once submitted the user will be notified that their comment has been posted.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/10%20-%20comment-success.png?raw=true)</br>
+</br>
+
+Comments will appear in order of date posted.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/11%20-%20comment-posted.png?raw=true)</br>
+</br>
 
 
 ### Admin / Superuser CRUD Capability Testing
