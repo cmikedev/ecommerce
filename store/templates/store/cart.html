@@ -13,8 +13,12 @@
                 <br><br><br>
                 <table class="table">
                     <tr>
-                        <th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>
-                        <th><h5>Total:<strong> €{{order.get_cart_total|floatformat:2|intcomma}}</strong></h5></th>
+                        <th>
+                            <p>Items: <strong>{{order.get_cart_items}}</strong></p>
+                        </th>
+                        <th>
+                            <p>Total:<strong> €{{order.get_cart_total|floatformat:2|intcomma}}</strong></p>
+                        </th>
                     </tr>
                 </table>
             </div>
@@ -43,8 +47,10 @@
                     <td><p class="quantity">{{item.quantity}}</p></td>
                     <td>
                       <div class="quantity">
-                        <img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106803/fmjm0q6kqn7tck3son8a.png">
-                        <img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106816/krr6t3dvaiy5kr7r9c39.png">
+                        <img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" 
+                        src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106803/fmjm0q6kqn7tck3son8a.png" alt="add">
+                        <img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" 
+                        src="https://res.cloudinary.com/dr8qa0p0e/image/upload/v1673106816/krr6t3dvaiy5kr7r9c39.png" alt="remove">
                       </div>
                     </td>
                   </tr>

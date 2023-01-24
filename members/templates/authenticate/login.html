@@ -4,15 +4,15 @@
     <div class="box-element">
         <h1>Login</h1>
         <br>
-        <form action="" method="POST">
+        <form action="#" method="POST">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" name="username" aria-describedby="usernameHelp">
+                <input id="username" type="text" class="form-control" name="username">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" type="password" class="form-control" name="password">
                 <br>
                 <p>
                     Not a member? Register an account 
@@ -24,4 +24,3 @@
     </div>
     <br><br><br>
 {% endblock content %}
-
