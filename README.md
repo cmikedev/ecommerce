@@ -49,10 +49,13 @@ When a Superuser logs in and navigates to the Store they are presented with addi
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/1%20-%20superuser%20-%20view.png?raw=true)</br>
 </br>
 
+The Superuser can click on the "Add new product" and they will be brought to a form containing fields from the Products model.</br>
+</br> 
+
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/2%20-%20superuser%20-%20add.png?raw=true)</br>
 </br>
 
-The Superuser can click on the "Add new product" and they will be brought to a form containing fields from the Products model. The Superuser fills out the details, adds a photograph and submits the form.</br>
+The Superuser fills out the details, adds a photograph and submits the form.</br>
 </br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/3%20-%20superuser%20-%20add-product.png?raw=true)</br>
