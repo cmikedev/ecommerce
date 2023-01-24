@@ -19,21 +19,24 @@
             <br><br>
             <div class="row">
                 <div class="col">
-                    <p>Please feel free to have a browse of our <strong>store</strong> and if you see anything you like 
+                    <p>Please feel free to have a browse of our store and if you see anything you like 
                         register to purchase. </p>
                     <div>
-                        <br>
-                        <a href="{% url 'storelist' %}" class="btn btn-outline-secondary">Browse</a>
+                        <a href="{% url 'storelist' %}" class="btn btn-dark">Browse</a>
                     </div>
+                    <br>
                 </div>
+            </div>
+            <br>
+            <div class="row">
                 {% if not user.is_authenticated %}
                     <div class="col">
                         <p><strong>Registration</strong> is free and easy and allows you to maintain your cart 
                             and ask questions/comment on any bike you're interested in.</p>
                         <div>
-                            <br>
-                            <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register</a>
+                            <a href="{% url 'register' %}" class="btn btn-warning">Register</a>
                         </div>
+                        <br>
                     </div>
                 {% endif %}
             </div>

@@ -8,11 +8,11 @@ Image created using [Am I responsive](https://ui.dev/amiresponsive)</br >
 </br >
 
 ### Deployed Website
-A link to the deployed project via the Heroku app can be found [here](https://battleship-cmikedev.herokuapp.com/).
+A link to the deployed project via the Heroku app can be found [here](https://moto-madness.herokuapp.com/).
 
 
 ### Repository
-The GitHub repository can be found [here](https://github.com/cmikedev/battleship).
+The GitHub repository can be found [here](https://github.com/cmikedev/ecommerce).
 
 
 ____
@@ -166,13 +166,13 @@ All identified bugs have been fixed including the example shown in section 3.1 a
 ### 4.2 GitHub
 #### Forking the repository
 * The GitHub repository can be forked to make a copy of the original. This copy can then be viewed or changed without affecting the original repository via the following steps:
-    * In the Respository section, select the [battleship](https://github.com/cmikedev/battleship) repository
+    * In the Respository section, select the [ecommerce](https://github.com/cmikedev/ecommerce) repository
     * At the top right of the page select <mark style="background-color: grey">fork</mark> from the menu below your profile
     * A copy of the repository will now be created in your account
 
 #### Creating a local clone
 * To create a local clone via GitHub:
-    * In the Respository section, select the [battleship](https://github.com/cmikedev/battleship) repository
+    * In the Respository section, select the [ecommerce](https://github.com/cmikedev/ecommerce) repository
     * From the horizontal menu above the repository contents select <mark style="background-color: grey">Code</mark>
     * __Copy__ the link that that is shown
     * Within __Gitpod__ change the directory to where you would like the location of the cloned directory to be
