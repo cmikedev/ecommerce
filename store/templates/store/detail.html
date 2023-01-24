@@ -31,10 +31,10 @@
                 <br>
                 {% if user.is_authenticated %}
                     <button data-bs-toggle="modal" data-bs-target="#add-to-cart" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                    <a class="btn btn-outline-secondary" href="{% url 'storelist' %}">Back</a>
+                    <a class="btn btn-outline-secondary" href="{% url 'storelist' %}" aria-label="Return to store">Back</a>
                 {% else %}
                     <button data-bs-toggle="modal" data-bs-target="#login-or-register" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                    <a class="btn btn-outline-secondary" href="{% url 'storelist' %}">Back</a>
+                    <a class="btn btn-outline-secondary" href="{% url 'storelist' %}" aria-label="Return to store">Back</a>
                 {% endif %}
                 <br><br>
                 <hr>
@@ -42,13 +42,13 @@
                 <h4>Comments...</h4>
                 <br>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'comment_add' product.slug product.pk %}">Leave a comment</a>
+                    <a href="{% url 'comment_add' product.slug product.pk %}" aria-label="Comment">Leave a comment</a>
                     <br>
                 {% else %}
                     <p>
                         You must be signed-in to comment. Please 
-                        <a href="{% url 'login' %}">sign in</a> or 
-                        <a href="{% url 'register' %}">register</a>
+                        <a href="{% url 'login' %}" aria-label="Sign in to acount">sign in</a> or 
+                        <a href="{% url 'register' %}" aria-label="Register an account">register</a>
                     </p>
                 {% endif %}
                 <br>
@@ -67,7 +67,7 @@
                     {% endfor %}
                 {% endif %}
                 {% if user.is_authenticated %}
-                    <a href="{% url 'comment_add' product.slug product.pk %}">Leave a comment</a>
+                    <a href="{% url 'comment_add' product.slug product.pk %}" aria-label="Comment">Leave a comment</a>
                     <br>
                 {% endif %}
             </div>
