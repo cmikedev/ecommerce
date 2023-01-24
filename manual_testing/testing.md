@@ -3,13 +3,14 @@
 The purpose of this section is to visually document the manual testing carried out on the Python, HTML, CSS and JavaScript code using online tools. 
 
 ### Contents:
-* Python PEP8 Testing
-* HTML W3C Testing
-* CSS W3C Testing
-* JavaScript JShint Testing
+1. Python PEP8 Testing
+2. HTML W3C Testing
+3. CSS W3C Testing
+4. JavaScript JShint Testing
+5. Responsiveness Testing
 
 
-## Python PEP8 Testing
+## 1. Python PEP8 Testing
 The python code was tested using Code Institute's [PEP8 Python Linter](https://pep8ci.herokuapp.com/)
 
 All Python code was returned error free and in accordance with PEP8.
@@ -47,7 +48,7 @@ All Python code was returned error free and in accordance with PEP8.
 </br >
 
 
-## HTML W3C Testing
+## 2. HTML W3C Testing
 The HTML was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#textarea). The HTML was manually inputted so as to be able to distinguish errors thrown up by the use of Bootstrap or Django.
 
 Each page returned errors which related to Django conventions. For example the validator could not recognise the use of Django context such as {% url 'link' %} within a html link tag.
@@ -132,7 +133,7 @@ Each page returned errors which related to Django conventions. For example the v
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/13%20-%20w3c%20-%20delete-product.png?raw=true)</br >
 </br >
 
-## CSS W3C Testing
+## 3. CSS W3C Testing
 The CSS was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#textarea) and selecting 'CSS'. Additionally the CSS was also put through W3C's [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
 
 In each instance there were no errors returned.
@@ -147,7 +148,7 @@ In each instance there were no errors returned.
 </br >
 
 
-## JavaScript JShint Testing
+## 4. JavaScript JShint Testing
 The JavaScript was tested using [JShint](https://jshint.com/). In each instance there were no errors returned.
 
 * JS static file
@@ -165,3 +166,17 @@ The JavaScript was tested using [JShint](https://jshint.com/). In each instance 
 * Checkout page (cont.) - Order processing - login.html
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/js/3.1%20-%20jshint%20-%20order%20-%20checkout.png?raw=true)</br >
 </br >
+
+
+## 5. Responsiveness Testing
+
+* The responsiveness tests were carried out manually using Google Chrome's [Inspect Function](https://developer.chrome.com/docs/devtools/open/) with also some real world testing on actual devices. Some of the devices tested included (but not limited to):
+    * Nest Hub Max
+    * iPad Mini
+    * iPad Air
+    * Samsung Galaxy S8+
+    * iPhone SE
+    * Samsung Galaxy S8 (real-world test on device)
+    * Samsung Galaxy S9 (real-world test on device)
+    * Apple MacBook Air (real-world test on device) <br />
+    <br />
