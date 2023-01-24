@@ -29,7 +29,18 @@ ____
 #### Site Users
 
 
-#### Admin / Superuser CRUD Capability
+### Admin / Superuser CRUD Capability
+
+Adding a Product
+___
+User Story:
+
+* As a Superuser I can add a product to the main product page so that the inventory is kept up to date
+    * An authenticated user can access a page to upload a product
+    * All uploads are done at the front-end
+    * The authenticated user is presented with additional options when logged in than regular users ie - an 'add product button'
+    * User is notified that the product has been successfully added
+___
 
 When a Superuser logs in and navigates to the Store they are presented with additional options on the main body ("Add Product") and in each of the product cards ("Edit", "Delete").</br>
 </br>
@@ -58,7 +69,15 @@ We can also see that the details are as we chose.</br>
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/5%20-%20superuser%20-%20add-details.png?raw=true)</br>
 </br>
 
-But it looks like there was a mistake. The price is too low and the wrong image has been used. The Superuser can easily amend this by selecting the "Edit" button.</br>
+But it looks like there was a mistake. The price is too low and the wrong image has been used.
+___
+User Story:
+* As a Superuser I can edit a product so that I can correct any errors or make changes to the details
+    * Authenticated user can edit a products details
+    * User is notified of the changes that are made
+___
+
+The Superuser can easily amend this by selecting the "Edit" button.</br>
 </br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/6%20-%20superuser%20-%20update.png?raw=true)</br>
@@ -75,6 +94,16 @@ Once again the page has been updated with the details chosen by the Superuser.</
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/8%20-%20superuser%20-%20update-success.png?raw=true)</br>
 </br>
+
+___
+User Story:
+
+* As a Superuser I can delete a product so that I can keep the inventory up to date
+    * Authenticated user can select a product to delete
+    * User must confirm that the product is to be deleted
+    * Once deleted, user is redirected back to the main product page
+___
+
 
 The Superuser has the option to delete the product entirely simply by selecting the delete button.</br>
 </br>
