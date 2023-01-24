@@ -3,10 +3,10 @@
 The purpose of this section is to visually document the manual testing carried out on the Python, HTML, CSS and JavaScript code using online tools. 
 
 ### Contents:
-* Python PEP8 testing
-* HTML W3C testing
-* CSS W3C testing
-* JavaScript JShint testing
+* Python PEP8 Testing
+* HTML W3C Testing
+* CSS W3C Testing
+* JavaScript JShint Testing
 
 
 ## Python PEP8 Testing
@@ -61,6 +61,8 @@ Each page returned errors which related to Django conventions. For example the v
 * Registration page - register_user.html
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/2%20-%20w3c%20-%20register.png?raw=true)</br >
 </br >
+
+### Store App:
 
 * Base page - head - base.html
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/3%20-%20w3c%20-%20base%20-%20head.png?raw=true)</br >
@@ -130,13 +132,36 @@ Each page returned errors which related to Django conventions. For example the v
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/13%20-%20w3c%20-%20delete-product.png?raw=true)</br >
 </br >
 
+## CSS W3C Testing
+The CSS was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#textarea) and selecting 'CSS'. Additionally the CSS was also put through W3C's [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
+
+In each instance there were no errors returned.
 
 
-
-* Login page - login.html
-![image]()</br >
+* W3C Nu HTML Checker
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/css/1%20-%20w3c%20-%20css.png?raw=true)</br >
 </br >
 
-* Login page - login.html
-![image]()</br >
+* W3C Jigsaw
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/css/2%20-%20w3c%20-%20css%20jigsaw.png?raw=true)</br >
+</br >
+
+
+## JavaScript JShint Testing
+The JavaScript was tested using [JShint](https://jshint.com/). In each instance there were no errors returned.
+
+* JS static file
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/js/1%20-%20jshint%20-%20js.png?raw=true)</br >
+</br >
+
+* Base page - base.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/js/2%20-%20jshint%20-%20base.png?raw=true)</br >
+</br >
+
+* Checkout page - PayPal checkout code - login.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/js/3%20-%20jshint%20-%20paypal%20-%20checkout.png?raw=true)</br >
+</br >
+
+* Checkout page (cont.) - Order processing - login.html
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/js/3.1%20-%20jshint%20-%20order%20-%20checkout.png?raw=true)</br >
 </br >
