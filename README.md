@@ -92,8 +92,55 @@ This document details:
 
 
 ### 3.3 Bugs
-All identified bugs have been fixed including the example shown in section 3.1 above.</br >
+#### Fixed Bugs
+
+* Mixed Content Error
+
+This appeared in the Console when a file was requested from Cloudinary through Django context (e.g. src="{{product.image.url}}" ). </br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/bugs/mixed-content.png?raw=true)</br>
+</br>
+
+Requests using standard URLs were over https. Requests as above had to be converted. This error was fixed by adding "http-equiv" and content="upgrade-insecure-requests" to the meta tags in the base.html head.</br >
 </br >
+
+
+#### Unfixed Bugs
+
+* Modal not displaying
+
+When an item is added to the cart the page page updates. In order to notify the user that they have successfully added an item to their cart a modal was created. As the page updated the modal would close without any input from the user. A workaround was to restyle it so that the user wouldn't need to interact with the modal but instead it would display for a short time and then self-close.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/bugs/modal.png?raw=true)</br>
+</br>
+
+This worked well in the development environment but with the Heroku deployment the modal displays and closes too quickly for a user to see or read it.</br>
+</br>
+
+* Carousel Speed is Variable
+
+The speed of the carousel on the welcome.html page which advertises newly added products to the user varies. On occasion it can take quite some time before it changes making it appear as though it is not loading whereas other times it moves fluidly. A possible cause is the image resolution/size.</br>
+</br>
+
+* PayPal Sandbox Checkout Freezing
+
+This has been a rare occurrence whereby the PayPal sandbox checkout has frozen.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/bugs/paypal-freeze.png?raw=true)</br>
+</br>
+
+* PayPal Sandbox Timeout
+
+This error has been identified in the Console. This error is just linked to the Sandbox api and does not affect the processing of payments.</br>
+</br>
+
+![!image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/bugs/paypal-timeout.png?raw=true)</br>
+</br>
+
+
 
 
 
