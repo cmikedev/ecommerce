@@ -39,7 +39,8 @@ class AddProductView(SuccessMessageMixin, generic.CreateView):
 class UpdateProductView(SuccessMessageMixin, generic.UpdateView):
     model = Product
     template_name = 'store/update-product.html'
-    fields = ['title', 'manufacturer', 'description', 'licence', 'price', ]
+    fields = ['title', 'manufacturer', 'description',
+              'image', 'licence', 'price', ]
     success_url = reverse_lazy('storelist')
     success_message = 'Product details have successfully been updated.'
 
