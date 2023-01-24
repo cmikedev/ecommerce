@@ -31,6 +31,12 @@ ____
 
 #### Admin / Superuser
 
+When a Superuser logs in and navigates to the Store they are presented with additional options on the main body ("Add Product") and in each of the product cards ("Edit", "Delete").</br>
+</br>
+
+![image]()</br>
+</br>
+
 ### Authentication Testing
 
 Throughtout the site, various actions such as the posting of forms are handled by authenticating users. Certain sections of the website will not be visible to a user that is not authenticated. However, this alone does not prohibit an unauthorised user accessing an area if they know the URL so authentication also takes place at the page level whereby a user that is not authenticated, or in the case of the product CRUD functionality, not a Superuser, will not be able to view that section of the site even with the URL.
@@ -91,7 +97,7 @@ This document details:
 6. Responsiveness Testing
 
 
-### 3.3 Bugs
+### Bugs
 #### Fixed Bugs
 
 * Mixed Content Error
