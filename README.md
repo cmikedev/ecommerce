@@ -29,12 +29,70 @@ ____
 #### Site Users
 
 
-#### Admin / Superuser
+#### Admin / Superuser CRUD Capability
 
 When a Superuser logs in and navigates to the Store they are presented with additional options on the main body ("Add Product") and in each of the product cards ("Edit", "Delete").</br>
 </br>
 
-![image]()</br>
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/1%20-%20superuser%20-%20view.png?raw=true)</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/2%20-%20superuser%20-%20add.png?raw=true)</br>
+</br>
+
+The Superuser can click on the "Add new product" and they will be brought to a form containing fields from the Products model. The Superuser fills out the details, adds a photograph and submits the form.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/3%20-%20superuser%20-%20add-product.png?raw=true)</br>
+</br>
+
+If successful the Superuser will be returned to the Store page and will receive a confirmation message that the item has been added. The product appears as the first item on the page because we chose "AAA" as the manufacturer. The products are currently sorted according to manufacturer.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/4%20-%20superuser%20-%20add-success.png?raw=true)</br>
+</br>
+
+We can also see that the details are as we chose.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/5%20-%20superuser%20-%20add-details.png?raw=true)</br>
+</br>
+
+But it looks like there was a mistake. The price is too low and the wrong image has been used. The Superuser can easily amend this by selecting the "Edit" button.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/6%20-%20superuser%20-%20update.png?raw=true)</br>
+</br>
+
+The Superuser simply changes the details that they want - in this case the image and the price - and submits the form.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/7%20-%20superuser%20-%20update-details.png?raw=true)</br>
+</br>
+
+Once again the page has been updated with the details chosen by the Superuser.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/8%20-%20superuser%20-%20update-success.png?raw=true)</br>
+</br>
+
+The Superuser has the option to delete the product entirely simply by selecting the delete button.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/9%20-%20superuser%20-%20delete.png?raw=true)<br>
+</br>
+
+Once selected the Superuser will be asked to confirm that they really want to delete the product and that the action is permanent.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/10%20-%20superuser%20-%20delete-confirm.png?raw=true)</br>
+</br>
+
+
+The product has been deleted!</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/11%20-%20superuser%20-%20delete-success.png?raw=true)</br>
 </br>
 
 ### Authentication Testing
