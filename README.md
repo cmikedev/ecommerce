@@ -1,11 +1,5 @@
 # Moto Madness
-Battleship is a single-player python version of the classic turn-based guess game.</br >
-</br > 
 
-![image](https://github.com/cmikedev/battleship/blob/main/assets/readme-images/am-i-responsive.png?raw=true)</br >
-</br >
-Image created using [Am I responsive](https://ui.dev/amiresponsive)</br >
-</br >
 
 ### Deployed Website
 A link to the deployed project via the Heroku app can be found [here](https://moto-madness.herokuapp.com/).
@@ -25,9 +19,16 @@ ____
 ## 3. Testing
 
 ### User Story Testing
+___
+User Story:
 
-#### Site Users
-
+* As a Site User I can register an account so that add items to my cart
+    * User can register an account
+    * User can login
+    * User is made aware of their login status
+    * User can logout
+    * User is made aware of their logout status
+___
 
 ### Admin / Superuser CRUD Capability
 
