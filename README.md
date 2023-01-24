@@ -28,37 +28,69 @@ ____
 
 ### Authentication Testing
 
-Throughtout the site, various actions such as the posting of forms are handled by authenticating users. Certain sections of the website will not be visible to a user that is not authenticated. However, this alone does not prohibit an unauthorised user accessing an area if they know the url so authentication also takes place at the page level whereby a user that is not authenticated, or in the case of the product CRUD functionality, not a superuser, will not be able to view that section of the site even with the url.
+Throughtout the site, various actions such as the posting of forms are handled by authenticating users. Certain sections of the website will not be visible to a user that is not authenticated. However, this alone does not prohibit an unauthorised user accessing an area if they know the URL so authentication also takes place at the page level whereby a user that is not authenticated, or in the case of the product CRUD functionality, not a Superuser, will not be able to view that section of the site even with the URL.
 
 A user who has is not logged in will in the first instance be presented with a full welcome page which offers them the opportunity to register. Login and registration buttons (as opposed to a welcome message and logout button) will render in the top right of the navbar.
 
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/1%20-%20welcome-view.png?raw=true)
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/1%20-%20welcome-view.png?raw=true)</br>
+</br>
 
-The user may decide to go straight to the store. From there they might see an item they like and decide to add it to their cart.
+The user may decide to go straight to the store. From there they might see an item they like and decide to add it to their cart.</br>
+</br>
 
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/2%20-%20add-item.png?raw=true)
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/2%20-%20add-item.png?raw=true)</br>
+</br>
 
-Doing this triggers a modal and the visitor is advised that they must login or register an account in order to add an item to the cart.
+Doing this triggers a modal and the visitor is advised that they must login or register an account in order to add an item to the cart.</br>
+</br>
 
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/3%20-%20add%20-%20login.png?raw=true)
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/3%20-%20add%20-%20login.png?raw=true)</br>
+</br>
 
 The user can click on "Cart" in the navbar if they wish and the Cart page will load showing zero products.
 
-If the user decides to visit the checkout page which they can via the link in the Cart page or the navbar, the checkout page will recognise that the user is not authenticated and instead render a message asking them to login or register.
+If the user decides to visit the checkout page which they can via the link in the Cart page or the navbar, the checkout page will recognise that the user is not authenticated and instead render a message asking them to login or register.</br>
+</br>
 
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/4%20-%20checkout.png?raw=true)
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/4%20-%20checkout.png?raw=true)</br>
+</br>
 
-The user instead decides to go back to the Store page and click on the product's details. The Detail page will render the product details along with the option to read comments (if any have been posted) or post one. If the user is not registered then the link to post a comment will not appear.
+The user instead decides to go back to the Store page and click on the product's details. The Detail page will render the product details along with the option to read comments (if any have been posted) or post one. If the user is not registered then the link to post a comment will not appear.</br>
+</br>
 
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/5%20-%20comment.png?raw=true)
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/5%20-%20comment.png?raw=true)</br>
+</br>
 
-Again, if the visitor ascertains the correct url to post a comment, the comment page will recognise the visitor as not being authenticated and will render a message informing them that they are not authorised to view this page along with a link back to the Welcome page.
+Again, if the visitor ascertains the correct url to post a comment, the comment page will recognise the visitor as not being authenticated and will render a message informing them that they are not authorised to view this page along with a link back to the Welcome page.</br>
+</br>
 
-![image]()
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/6%20-%20add-comment.png?raw=true)</br>
+</br>
+
+The option to add a product is only rendered for a Superuser. If an unregistered or registered user obtains the URL for the page to add a product, the page will ascertain that they are not a Superuser and will render with a message informing them that they do not have permission to view the page.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/7%20-%20add-product.png?raw=true)</br>
+</br>
+
+
+### Code and Responsiveness Testing
+All code and site responsiveness has been tested as available [here](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/testing.md).
+This document details:
+
+1. Python PEP8 Testing
+2. HTML W3C Testing
+3. CSS W3C Testing
+4. JavaScript JShint Testing
+5. Lighthouse Testing
+6. Responsiveness Testing
+
 
 ### 3.3 Bugs
 All identified bugs have been fixed including the example shown in section 3.1 above.</br >
 </br >
+
+
 
 
 ## 4. Deployment
