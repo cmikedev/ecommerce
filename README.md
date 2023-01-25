@@ -87,7 +87,7 @@ User Story:
     * User is presented with expanded details of the product on a dedicated page
 ___
 
-If a user clicks on "Info", they will be directed to a Detail page which contains more details about the product they are interested in as well as the ability to read and post comments.</br>
+If a user clicks on "View", they will be directed to a Detail page which contains more details about the product they are interested in as well as the ability to read and post comments.</br>
 </br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/7%20-%20view-products.png?raw=true)</br>
@@ -127,6 +127,20 @@ Comments will appear in order of date posted.</br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/11%20-%20comment-posted.png?raw=true)</br>
 </br>
+
+
+___
+User Story:
+
+* As a Site User I can use the integrated PayPal button so that I can purchase products
+    * User can select a product and add it to their cart
+    * User can edit their cart
+    * User can add details at checkout
+    * User can pay for the product using PayPal
+    * User is redirected back to the main product/shop page
+___
+
+
 
 
 ### Admin / Superuser CRUD Capability Testing

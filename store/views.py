@@ -7,7 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 import json
 import datetime
-from .models import
+from .models import *
 from .forms import *
 
 
