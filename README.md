@@ -20,12 +20,12 @@ ____
 
 This section focuses on testing the website from the point of view of the user in line with the user stories utilised in this project's Kanban. The testing is spread across four areas:
 
-1. User Story Testing
-2. Admin / Superuser CRUD Capability Testing
-3. Authentication Testing
-4. Code and Responsiveness Testing
+3.1 User Story Testing
+3.2 Admin / Superuser CRUD Capability Testing
+3.3 Authentication Testing
+3.4 Code and Responsiveness Testing
 
-### User Story Testing
+## 3.1 User Story Testing
 ___
 User Story:
 
@@ -140,10 +140,40 @@ User Story:
     * User is redirected back to the main product/shop page
 ___
 
+The User can click on the "Add to Cart" button of a product they wish to purchase. When the user navigates to the Cart page they product will be visible. (See Bugs Section below with regards to the comment)</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/12%20-%20add-to-cart.png?raw=true)</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/13%20-%20cart.png?raw=true)</br>
+</br>
+
+If the user decides that they would like to order more than one of the same product they can increase the quantity using the up arrows. Conversely the item will be removed if the user clicks the down arrow when the quantity is equal to one. The total price will update.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/14%20-%20change-qty.png?raw=true)</br>
+</br>
+
+When the user navigates to the Checkout page they will be asked for their name, email and shipping address. When inputted, if the user clicks "Continue" the PayPal button will appear.</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/15%20-%20checkout.png?raw=true)</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/16%20-%20checkout-submit.png?raw=true)</br>
+</br>
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/17%20-%20checkout-paypal.png?raw=true)</br>
+</br>
+
+When the user has submitted their payment they will be redirected to a page informing them that their order has been received and is being processed. They can then navigate back to the Store page using the button.
+
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/18%20-%20checkout-success.png?raw=true)</br>
+</br></br></br>
 
 
-
-### Admin / Superuser CRUD Capability Testing
+## 3.2 Admin / Superuser CRUD Capability Testing
 
 Adding a Product
 ___
@@ -241,7 +271,7 @@ The product has been deleted!</br>
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/11%20-%20superuser%20-%20delete-success.png?raw=true)</br>
 </br>
 
-### Authentication Testing
+## 3.3 Authentication Testing
 
 Throughtout the site, various actions such as the posting of forms are handled by authenticating users. Certain sections of the website will not be visible to a user that is not authenticated. However, this alone does not prohibit an unauthorised user accessing an area if they know the URL so authentication also takes place at the page level whereby a user that is not authenticated, or in the case of the product CRUD functionality, not a Superuser, will not be able to view that section of the site even with the URL.
 
@@ -289,7 +319,7 @@ The option to add a product is only rendered for a Superuser. If an unregistered
 </br>
 
 
-### Code and Responsiveness Testing
+## 3.4 Code and Responsiveness Testing
 All code and site responsiveness has been tested as available [here](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/testing.md).
 This document details:
 
