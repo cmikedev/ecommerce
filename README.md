@@ -276,7 +276,7 @@ The Superuser has the option to delete the product entirely simply by selecting 
 Once selected the Superuser will be asked to confirm that they really want to delete the product and that the action is permanent.</br>
 </br>
 
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/10%20-%20superuser%20-%20delete-confirm.png?raw=true)</br>
+![image]()</br>
 </br>
 
 
