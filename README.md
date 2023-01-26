@@ -35,7 +35,7 @@ ___
 
 ## 3. Site Design
 
-A key feature of the proposed site was a clear, concise layout where the products were to the fore. The products should be immediately visible and not crowded. A simple navigation bar should allow the user to see move through the site. The user should also be aware of their logged in status.</br>
+A key feature of the proposed site was a clear, concise layout where the products were to the fore. The products should be immediately visible and not crowded. A simple navigation bar should allow the user to move through the site. The user should also be aware of their logged in status.</br>
 </br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/readme_images/wireframe.png?raw=true)</br>
@@ -66,9 +66,12 @@ This section focuses on testing the website from the point of view of the user i
 - 3.2 Admin / Superuser CRUD Capability Testing
 - 3.3 Authentication Testing
 - 3.4 Code and Responsiveness Testing
-
-## 4.1 User Story Testing
 </br>
+
+### 4.1 User Story Testing
+
+___
+
 User Story:
 
 As a Site User I can register an account so that add items to my cart.
@@ -80,6 +83,7 @@ As a Site User I can register an account so that add items to my cart.
     * User is made aware of their logout status
 ___
 
+</br>
 A site visitor can click on the "Register" button on the navbar.</br>
 </br>
 
@@ -93,7 +97,7 @@ The visitor will then be directed to a registration form. The user needs to choo
 </br>
 
 
-If their submission is successful they will be redirected to the Store page whereby the "Login" and "Register" buttons on the top right of the navbar will have changed to reflect their loged in status.</br>
+If their submission is successful they will be redirected to the Store page whereby the "Login" and "Register" buttons on the top right of the navbar will have changed to reflect their logged in status.</br>
 </br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/3%20-%20registration-successful.png?raw=true)</br>
@@ -105,7 +109,7 @@ To logout, a user just needs to click on the "Logout" button.</br>
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/5%20-%20logout.png?raw=true)</br>
 </br>
 
-The user will then be redirected to the Welcome page and they will receive confirmation of their logged out status via a message and that the buttons on the navbar will once again have changed.</br>
+The user will then be redirected to the Welcome page and they will receive confirmation of their logged out status via a message and the buttons on the navbar will once again have changed.</br>
 </br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/6%20-%20logout-successful.png?raw=true)</br>
@@ -164,7 +168,8 @@ On the Details page a user will be able to see any comments that have been poste
 
 The option to add a comment will only be visible for authenticated users - see Authentication Testing section below.
 
-By selecting to add a comment an authenticated user will be directed to a form to post their comment under their username.
+By selecting to add a comment an authenticated user will be directed to a form to post their comment under their username.</br>
+</br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/9%20-%20comment-submit.png?raw=true)</br>
 </br>
@@ -223,13 +228,14 @@ When the user navigates to the Checkout page they will be asked for their name, 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/17%20-%20checkout-paypal.png?raw=true)</br>
 </br>
 
-When the user has submitted their payment they will be redirected to a page informing them that their order has been received and is being processed. They can then navigate back to the Store page using the button.
+When the user has submitted their payment they will be redirected to a page informing them that their order has been received and is being processed. They can then navigate back to the Store page using the button.</br>
+</br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/18%20-%20checkout-success.png?raw=true)</br>
 </br></br></br>
 
 
-## 4.2 Admin / Superuser CRUD Capability Testing
+### 4.2 Admin / Superuser CRUD Capability Testing
 
 ___
 User Story:
@@ -336,7 +342,7 @@ The product has been deleted!</br>
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/11%20-%20superuser%20-%20delete-success.png?raw=true)</br>
 </br>
 
-## 4.3 Authentication Testing
+### 4.3 Authentication Testing
 
 Throughtout the site, various actions such as the posting of forms are handled by authenticating users. Certain sections of the website will not be visible to a user that is not authenticated. However, this alone does not prohibit an unauthorised user accessing an area if they know the URL so authentication also takes place at the page level whereby a user that is not authenticated, or in the case of the product CRUD functionality, not a Superuser, will not be able to view that section of the site even with the URL.
 
@@ -385,7 +391,7 @@ The option to add a product is only rendered for a Superuser. If an unregistered
 </br>
 
 
-## 4.4 Code and Responsiveness Testing
+### 4.4 Code and Responsiveness Testing
 All code and site responsiveness has been tested as available [here](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/testing.md).
 This document details:
 
@@ -402,7 +408,7 @@ ___
 
 ## 5 Bugs
 
-## 5.1 Fixed Bugs
+### 5.1 Fixed Bugs
 
 * Mixed Content Error
 
@@ -416,7 +422,7 @@ Requests using standard URLs were over https. Requests as above had to be conver
 </br >
 
 
-## 5.2 Unfixed Bugs
+### 5.2 Unfixed Bugs
 
 * Modal not displaying
 

@@ -41,7 +41,7 @@ ___
 ## 2. HTML W3C Testing
 The HTML was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#textarea). The HTML was manually inputted so as to be able to distinguish errors thrown up by the use of Bootstrap or Django.
 
-## 2.1 Members App:
+### 2.1 Members App:
 
 * Login page - login.html
     * There were no warnings or errors returned</br >
@@ -54,7 +54,7 @@ The HTML was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#t
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/1%20-%20w3c%20-%20register.png?raw=true)</br >
 </br >
 
-## 2.2 Store App:
+### 2.2 Store App:
 
 * Welcome page - welcome.html
 * Store page - store.html
