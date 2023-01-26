@@ -14,39 +14,22 @@ The purpose of this section is to visually document the manual testing carried o
 ## 1. Python PEP8 Testing
 The python code was tested using Code Institute's [PEP8 Python Linter](https://pep8ci.herokuapp.com/)
 
+
+The following pages were tested:
+
+1. Members App:
+    * urls.py
+    * views.py</br>
+    </br>
+
+2. Store App:
+    * models.py
+    * admin.py
+    * forms.py
+    * views.py
+    * urls.py
+
 All Python code was returned error free and in accordance with PEP8.
-
-### Members App:
-
-* Members - urls.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/1%20-%20members%20-%20urls.png?raw=true)</br >
-</br >
-
-* Members - views.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/2%20-%20members%20-%20views.png?raw=true)</br >
-</br >
-
-### Store App:
-
-* Store - models.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/3%20-%20store%20-%20models.png?raw=true)</br >
-</br >
-
-* Store - admin.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/4%20-%20store%20-%20admin.png?raw=true)</br >
-</br >
-
-* Store - forms.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/5%20-%20store%20-%20forms.png?raw=true)</br >
-</br >
-
-* Store - views.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/6%20-%20store%20-%20views.png?raw=true)</br >
-</br >
-
-* Store - urls.py
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/python/7%20-%20store%20-%20urls.png?raw=true)</br >
-</br >
 
 
 ## 2. HTML W3C Testing
@@ -61,7 +44,7 @@ The HTML was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#t
 * Registration page - register_user.html
     * The W3C Validator returned four errors. These were not errors within the HTML code but due to the make-up of Django's "UserCreationForm" included to register users.</br>
 </br>
-![image](/manual_testing/images/html/1%20-%20w3c%20-%20register.png)</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/1%20-%20w3c%20-%20register.png?raw=true)</br >
 </br >
 
 ## 2.2 Store App:
