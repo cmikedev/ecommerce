@@ -8,7 +8,8 @@ The purpose of this section is to visually document the manual testing carried o
 3. CSS W3C Testing
 4. JavaScript JShint Testing
 5. Lighthouse Testing
-6. Responsiveness Testing
+6. Responsiveness Testing</br>
+</br>
 
 
 ## 1. Python PEP8 Testing
@@ -29,7 +30,8 @@ The following pages were tested:
     * views.py
     * urls.py
 
-All Python code was returned error free and in accordance with PEP8.
+All Python code was returned error free and in accordance with PEP8.</br>
+</br>
 
 
 ## 2. HTML W3C Testing
