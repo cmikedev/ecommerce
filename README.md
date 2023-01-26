@@ -496,18 +496,32 @@ ___
 ## 7. References
 
 
-* Dennis Ivy's [Django Ecommerce Website tutorial](https://www.youtube.com/watch?v=_ELCMngbM0E&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=1&t=1738s)
+* Dennis Ivy - [Django Ecommerce Website tutorial](https://www.youtube.com/watch?v=_ELCMngbM0E&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=1&t=1738s)
 
     * Where the Python, JavaScript or CSS has been used or modified, it has been referenced in the code.
 
-* Codemy.com's [Youtube tutorial](https://www.youtube.com/watch?v=EqjRhO5CK6A&t=617s)
+* Codemy.com - [Youtube tutorial](https://www.youtube.com/watch?v=EqjRhO5CK6A&t=617s)
     
     * The "members" app has been created from this tutorial. The code contained within the tutorial mirrors Django's documentation. Customisation has been referenced in the code.
-
 
 ___
 
 </br>
 
-## 8. Acknowledgements
+
+## 8. Research
+
+
+* freeCodeCamp.org - [How to Build an E-commerce Website with Django and Python](https://www.youtube.com/watch?v=YZvRrldjf1Y)
+* Andika Pratama - [How to Create Fully Functional E-commerce Website With Django](https://medium.com/analytics-vidhya/how-to-create-simple-e-commerce-website-with-django-step-1-of-5-42c6cca414c2)
+* Django Central - [Building A Blog Application With Django](https://djangocentral.com/building-a-blog-application-with-django/)
+* How to Code More - [How To Create A Comment Section For Django Blog/Website in Just 5 Steps using django-comments-xtd ?](https://awstip.com/how-to-create-a-comment-section-for-django-blog-website-in-just-5-steps-using-django-comments-xtd-99b450540497)
+* Majin Dev - [Django Import Images to Cloudinary](https://www.youtube.com/watch?v=1T6G7Znrbfg)
+* Code With Stein - [Python Django Ecommerce Website With Multiple Vendors | Learn Django For Beginners](https://www.youtube.com/watch?v=-QFZsX0b9Cg&t=1579s)
+
+___
+
+</br>
+
+## 9. Acknowledgements
 I would like to thank my course mentor Harry Dhillon for providing guidance on this project.
