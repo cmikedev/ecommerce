@@ -3,6 +3,7 @@
 
 {% block content %}
     {% if user.is_authenticated %}
+    <div style="text-align: center;">
         <h4>Add your comment</h4>
         <br>
         <p>Posting as: {{ user.username }}</p>
@@ -12,6 +13,7 @@
             <input type="submit" value="Submit" class="btn btn-outline-secondary">
         </form>
         <br><br><br>
+    </div>
     {% else %}
         <br>
         <h1>Oops...</h1>
