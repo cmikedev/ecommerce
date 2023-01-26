@@ -119,7 +119,7 @@ The option to add a comment will only be visible for authenticated users - see A
 
 By selecting to add a comment an authenticated user will be directed to a form to post their comment under their username.
 
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/9%20-%20comment-submit.png?raw=true)</br>
+![image]()</br>
 </br>
 
 Once submitted the user will be notified that their comment has been posted.</br>
@@ -177,7 +177,7 @@ When the user navigates to the Checkout page they will be asked for their name, 
 
 When the user has submitted their payment they will be redirected to a page informing them that their order has been received and is being processed. They can then navigate back to the Store page using the button.
 
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/user_stories/18%20-%20checkout-success.png?raw=true)</br>
+![image]()</br>
 </br></br></br>
 
 
