@@ -331,8 +331,8 @@ This document details:
 6. Responsiveness Testing
 
 
-### Bugs
-#### Fixed Bugs
+## 4 Bugs
+### 4.1 Fixed Bugs
 
 * Mixed Content Error
 
@@ -346,7 +346,7 @@ Requests using standard URLs were over https. Requests as above had to be conver
 </br >
 
 
-#### Unfixed Bugs
+### 4.2 Unfixed Bugs
 
 * Modal not displaying
 
@@ -385,9 +385,9 @@ This error has been identified in the Console. This error is just linked to the 
 
 
 
-## 4. Deployment
+## 5 Deployment
 
-### 4.1 Deploying the repository via Heroku
+### 5.1 Deploying the repository via Heroku
 * The app was created using Heroku via the following steps:
     * On the https://dashboard.heroku.com/apps page, click <mark style="background-color: grey">New</mark> and then select <mark style="background-color: grey">Create New App</mark> from the drop-down menu.
     * When the next page loads insert the <mark style="background-color: grey">App name</mark> and <mark style="background-color: grey">Choose a region</mark>. The click <mark style="background-color: grey">Create app</mark>
@@ -403,7 +403,7 @@ This error has been identified in the Console. This error is just linked to the 
     * Once the deployment method has been chosen the app will be built and can be launched by clicking the <mark style="background-color: grey">Open app</mark> button at the top of the page.<br />
     <br />
 
-### 4.2 GitHub
+### 5.2 GitHub
 #### Forking the repository
 * The GitHub repository can be forked to make a copy of the original. This copy can then be viewed or changed without affecting the original repository via the following steps:
     * In the Respository section, select the [ecommerce](https://github.com/cmikedev/ecommerce) repository
@@ -423,8 +423,9 @@ This error has been identified in the Console. This error is just linked to the 
 
 
 
-## 5. References
+## 6. References
 
+[Codemy.com Youtube tutorial](https://www.youtube.com/watch?v=EqjRhO5CK6A&t=617s)
 
 
 ----

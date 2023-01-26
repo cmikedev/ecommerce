@@ -5,6 +5,14 @@ from django.contrib.auth.forms import UserCreationForm
 from store.models import Customer
 
 
+"""
+The 'login_user' and 'logout_user' functions are taken from the
+Codemy.com tutorial referenced in the README.md but both functions
+mirror the code from the Django documentation. The 'register_user'
+function has been customised from the same tutorial.
+"""
+
+
 def login_user(request):
     if request.method == "POST":
         username = request.POST['username']
