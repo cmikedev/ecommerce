@@ -61,7 +61,7 @@ The HTML was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#t
 * Registration page - register_user.html
     * The W3C Validator returned four errors. These were not errors within the HTML code but due to the make-up of Django's "UserCreationForm" included to register users.</br>
 </br>
-![]()</br >
+![image](/manual_testing/images/html/1%20-%20w3c%20-%20register.png)</br >
 </br >
 
 ## 2.2 Store App:
