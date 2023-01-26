@@ -17,23 +17,6 @@ class NewProductForm(forms.ModelForm):
             )
 
 
-class NewUserForm(UserCreationForm):
-
-    class Meta:
-        model = User
-        fields = (
-            "username",
-            "password1",
-            "password2"
-            )
-
-    def save(self, commit=True):
-        user = super(NewUserForm, self).save(commit=False)
-        if commit:
-            user.save()
-        return user
-
-
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment

@@ -61,26 +61,16 @@ Each page returned errors which related to Django conventions. For example the v
 </br >
 
 * Registration page - register_user.html
+
+The W3C Validator returned four errors. These were not errors within the HTML code but due to the make-up of Django's "UserCreationForm" included to register users.</br>
+</br>
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/2%20-%20w3c%20-%20register.png?raw=true)</br >
 </br >
 
 ### Store App:
 
-* Base page - head - base.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/3%20-%20w3c%20-%20base%20-%20head.png?raw=true)</br >
-</br >
-
-* Base page - body - base.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/3.1%20-%20w3c%20-%20base%20-%20body%20-%201.png?raw=true)</br >
-</br >
-
-* Base page - body (cont.) - base.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/3.2%20-%20w3c%20-%20base%20-%20body%20-%202.png?raw=true)</br >
-</br >
-
 * Welcome page - welcome.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/4%20-%20w3c%20-%20welcome.png?raw=true)</br >
-</br >
+There were no warnings or errors returned
 
 * Store page - store.html
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/5%20-%20w3c%20-%20store.png?raw=true)</br >
