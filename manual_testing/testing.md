@@ -52,77 +52,59 @@ All Python code was returned error free and in accordance with PEP8.
 ## 2. HTML W3C Testing
 The HTML was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#textarea). The HTML was manually inputted so as to be able to distinguish errors thrown up by the use of Bootstrap or Django.
 
-Each page returned errors which related to Django conventions. For example the validator could not recognise the use of Django context such as {% url 'link' %} within a html link tag.
-
-### Members App:
+## 2.1 Members App:
 
 * Login page - login.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/1%20-%20w3c%20-%20login.png?raw=true)</br >
+    * There were no warnings or errors returned</br >
 </br >
 
 * Registration page - register_user.html
-
-The W3C Validator returned four errors. These were not errors within the HTML code but due to the make-up of Django's "UserCreationForm" included to register users.</br>
+    * The W3C Validator returned four errors. These were not errors within the HTML code but due to the make-up of Django's "UserCreationForm" included to register users.</br>
 </br>
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/2%20-%20w3c%20-%20register.png?raw=true)</br >
+![]()</br >
 </br >
 
-### Store App:
+## 2.2 Store App:
 
 * Welcome page - welcome.html
-There were no warnings or errors returned
+    * There were no warnings or errors returned</br>
+</br>
 
 * Store page - store.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/5%20-%20w3c%20-%20store.png?raw=true)</br >
-</br >
-
-* Store page (cont.) - store.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/5.1%20-%20w3c%20-%20store.png?raw=true)</br >
-</br >
+    * There were no warnings or errors returned</br>
+</br>
 
 * Detail page - detail.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/6%20-%20w3c%20-%20detail.png?raw=true)</br >
-</br >
-
-* Detail page (cont.) - detail.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/6.1%20-%20w3c%20-%20detail.png?raw=true)</br >
-</br >
-
-* Detail page (cont.) - detail.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/6.2%20-%20w3c%20-%20detail.png?raw=true)</br >
-</br >
+    * There were no warnings or errors returned</br>
+</br>
 
 * Comment page - add-comment.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/7%20-%20w3c%20-%20add-comment.png?raw=true)</br >
-</br >
+    * There were no warnings or errors returned</br>
+</br>
 
 * Cart page - cart.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/8%20-%20w3c%20-%20cart.png?raw=true)</br >
-</br >
+    * There were no warnings or errors returned</br>
+</br>
 
 * Checkout page - checkout.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/9%20-%20w3c%20-%20checkout.png?raw=true)</br >
-</br >
-
-* Checkout page (cont.) - checkout.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/9.1%20-%20w3c%20-%20checkout.png?raw=true)</br >
-</br >
+    * There were no warnings or errors returned</br>
+</br>
 
 * Payment page - payment.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/10%20-%20w3c%20-%20payment.png?raw=true)</br >
-</br >
+    * There were no warnings or errors returned</br>
+</br>
 
-* Add product page - add-product.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/11%20-%20w3c%20-%20add-product.png?raw=true)</br >
-</br >
+* Add Product page - add-product.html
+    * There were no warnings or errors returned</br>
+</br>
 
-* Update product page - update-product.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/12%20-%20w3c%20-%20update-product.png?raw=true)</br >
-</br >
+* Update Product page - update-product.html
+    * There were no warnings or errors returned</br>
+</br>
 
-* Delete product page - delete-product.html
-![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/html/13%20-%20w3c%20-%20delete-product.png?raw=true)</br >
-</br >
+* Delete Product page - delete-product.html
+    * There were no warnings or errors returned</br>
+</br>
 
 ## 3. CSS W3C Testing
 The CSS was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#textarea) and selecting 'CSS'. Additionally the CSS was also put through W3C's [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
