@@ -1,5 +1,8 @@
 # Moto Madness
 
+## 1. Introduction
+
+Moto Madness is a fictional ecommerce site offering for sale discounted factory-second motorcycles imported from Japan.
 
 ### Deployed Website
 A link to the deployed project via the Heroku app can be found [here](https://moto-madness.herokuapp.com/).
@@ -8,15 +11,56 @@ A link to the deployed project via the Heroku app can be found [here](https://mo
 ### Repository
 The GitHub repository can be found [here](https://github.com/cmikedev/ecommerce).
 
-
 ____
+</br>
 
 
+## 2. Planning
 
-## 1. Design
+The purpose of this ecommerce site is to provide the user with a clear, intuitive interface which allows them to immediately understand the services being offered, navigate easily through the various pages, interact via comments and ultimately purchase a product. To achieve this, Agile methodology was used within the planning and design process. Github's Kanban board was implemented to design and track user stories which were vital in developing a user-focused experience:
 
+1. As a Site User I can register an account so that add items to my cart
+2. As a Site User I can view a list of products for sale so that I can select one to view
+3. As a Site User I can open up a product page so that I can view more details
+4. As a Site User I can use the integrated PayPal button so that I can purchase products
+5. As a Site User I can leave comments under a product so that I can ask questions or leave a review
+6. As a Superuser I can add a product to the main product page so that the inventory is kept up to date
+7. As a Superuser I can edit a product so that I can correct any errors or make changes to the details
+8. As a Superuser I can delete a product so that I can keep the inventory up to date
 
-## 3. Testing
+The completed Kanban Board can be found [here](https://github.com/users/cmikedev/projects/8).
+
+___
+</br>
+
+## 3. Site Design
+
+## 3.1 Layout & Visual Design
+
+A key feature of the proposed site was a clear, concise layout where the products were to the fore. The products should be immediately visible and not crowded. A simple navigation bar should allow the user to see move through the site. The user should also be aware of their logged in status.</br>
+</br>
+
+![image]()</br>
+</br>
+
+The construction of the site is based on Dennis Ivy's [Django Ecommerce Website tutorial](https://www.youtube.com/watch?v=_ELCMngbM0E&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=1&t=1738s) (see references). The following features were added:
+
+* A Welcome page to allow the user to understand the site's purpose
+* Full authentication to allow a visitor to register an account, sign-in and to ensure that only authenticated users may view certain pages and complete certain actions
+* Notifications to users of their login status and the completion of actions
+* Role-based login
+* Full front-end CRUD functionality for the Superuser allowing them to add, read, update and delete products
+* A responsive products page which does not statically list the products allowing them to be updated at the front-end
+* A Detail page which allows the user to view further information on a product
+* The ability for users to interact with the site by leaving comments
+* Notification of payment processing is no longer handled by JavaScript Alerts but by directing a user to a dedicate notification page
+
+Based on researching similar sites which sold either motorcycles or other vehicles it became apparent that a judiscious use of a small number of dark and light colours, usually shades of black and white, accentuated the colours of the products being sold and pushed them to the fore of the site. Site's such as [BMW's Autorrad](https://www.joeduffy.ie/motorrad) and [Kawasaki's Motorcycle site](https://www.kawasaki.co.uk/en/products) make use of a such a scheme.
+
+___
+</br>
+
+## 4. Testing
 
 This section focuses on testing the website from the point of view of the user in line with the user stories utilised in this project's Kanban. The testing is spread across four areas:
 
@@ -25,7 +69,7 @@ This section focuses on testing the website from the point of view of the user i
 3.3 Authentication Testing
 3.4 Code and Responsiveness Testing
 
-## 3.1 User Story Testing
+## 4.1 User Story Testing
 ___
 User Story:
 
@@ -181,7 +225,7 @@ When the user has submitted their payment they will be redirected to a page info
 </br></br></br>
 
 
-## 3.2 Admin / Superuser CRUD Capability Testing
+## 4.2 Admin / Superuser CRUD Capability Testing
 
 Adding a Product
 ___
@@ -286,7 +330,7 @@ The product has been deleted!</br>
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/superuser_crud/11%20-%20superuser%20-%20delete-success.png?raw=true)</br>
 </br>
 
-## 3.3 Authentication Testing
+## 4.3 Authentication Testing
 
 Throughtout the site, various actions such as the posting of forms are handled by authenticating users. Certain sections of the website will not be visible to a user that is not authenticated. However, this alone does not prohibit an unauthorised user accessing an area if they know the URL so authentication also takes place at the page level whereby a user that is not authenticated, or in the case of the product CRUD functionality, not a Superuser, will not be able to view that section of the site even with the URL.
 
@@ -334,7 +378,7 @@ The option to add a product is only rendered for a Superuser. If an unregistered
 </br>
 
 
-## 3.4 Code and Responsiveness Testing
+## 4.4 Code and Responsiveness Testing
 All code and site responsiveness has been tested as available [here](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/testing.md).
 This document details:
 
@@ -346,8 +390,12 @@ This document details:
 6. Responsiveness Testing
 
 
-## 4 Bugs
-### 4.1 Fixed Bugs
+___
+</br>
+
+## 5 Bugs
+
+## 5.1 Fixed Bugs
 
 * Mixed Content Error
 
@@ -361,7 +409,7 @@ Requests using standard URLs were over https. Requests as above had to be conver
 </br >
 
 
-### 4.2 Unfixed Bugs
+## 5.2 Unfixed Bugs
 
 * Modal not displaying
 
@@ -392,17 +440,16 @@ This has been a rare occurrence whereby the PayPal sandbox checkout has frozen.<
 This error has been identified in the Console. This error is just linked to the Sandbox api and does not affect the processing of payments.</br>
 </br>
 
-![!image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/bugs/paypal-timeout.png?raw=true)</br>
+![!image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/bugs/paypal-timeout.png?raw=true)
+
+
+
+___
 </br>
 
+## 6 Deployment
 
-
-
-
-
-## 5 Deployment
-
-### 5.1 Deploying the repository via Heroku
+### 6.1 Deploying the repository via Heroku
 * The app was created using Heroku via the following steps:
     * On the https://dashboard.heroku.com/apps page, click <mark style="background-color: grey">New</mark> and then select <mark style="background-color: grey">Create New App</mark> from the drop-down menu.
     * When the next page loads insert the <mark style="background-color: grey">App name</mark> and <mark style="background-color: grey">Choose a region</mark>. The click <mark style="background-color: grey">Create app</mark>
@@ -418,7 +465,7 @@ This error has been identified in the Console. This error is just linked to the 
     * Once the deployment method has been chosen the app will be built and can be launched by clicking the <mark style="background-color: grey">Open app</mark> button at the top of the page.<br />
     <br />
 
-### 5.2 GitHub
+### 6.2 GitHub
 #### Forking the repository
 * The GitHub repository can be forked to make a copy of the original. This copy can then be viewed or changed without affecting the original repository via the following steps:
     * In the Respository section, select the [ecommerce](https://github.com/cmikedev/ecommerce) repository
@@ -438,12 +485,13 @@ This error has been identified in the Console. This error is just linked to the 
 
 
 
-## 6. References
+## 7. References
 
 [Codemy.com Youtube tutorial](https://www.youtube.com/watch?v=EqjRhO5CK6A&t=617s)
 
 
 ----
+</br>
 
-## 6. Acknowledgements
+## 8. Acknowledgements
 I would like to thank my course mentor Harry Dhillon for providing guidance on this project.
