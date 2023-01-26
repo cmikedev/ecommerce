@@ -29,7 +29,8 @@ This section focuses on testing the website from the point of view of the user i
 ___
 User Story:
 
-* As a Site User I can register an account so that add items to my cart
+As a Site User I can register an account so that add items to my cart.
+* Acceptance Criteria:
     * User can register an account
     * User can login
     * User is made aware of their login status
@@ -72,7 +73,9 @@ The user will then be redirected to the Welcome page and they will receive confi
 ___
 User Story:
 
-* As a Site User I can view a list of products for sale so that I can select one to view
+As a Site User I can view a list of products for sale so that I can select one to view.
+
+* Acceptance Criteria:
     * User can view and browse all available products
     * User can select a product and view further details
 ___
@@ -82,7 +85,9 @@ A user can view all of the products in the Store. Eight products appear on each 
 ___
 User Story:
 
-* As a Site User I can open up a product page so that I can view more details
+As a Site User I can open up a product page so that I can view more details.
+
+* Acceptance Criteria:
     * User can select a product and be directed to a details page
     * User is presented with expanded details of the product on a dedicated page
 ___
@@ -96,9 +101,10 @@ If a user clicks on "View", they will be directed to a Detail page which contain
 ___
 User Story:
 
-As a Site User I can leave comments under a product so that I can ask questions or leave a review
+As a Site User I can leave comments under a product so that I can ask questions or leave a review.
 
-* User can view comments pertaining to a product
+* Acceptance Criteria:
+    * User can view comments pertaining to a product
     * User if authenticated can add a comment
     * User is notified that their comment has been posted
 ___
@@ -132,7 +138,9 @@ Comments will appear in order of date posted.</br>
 ___
 User Story:
 
-* As a Site User I can use the integrated PayPal button so that I can purchase products
+As a Site User I can use the integrated PayPal button so that I can purchase products.
+
+* Acceptance Criteria:
     * User can select a product and add it to their cart
     * User can edit their cart
     * User can add details at checkout
@@ -179,7 +187,9 @@ Adding a Product
 ___
 User Story:
 
-* As a Superuser I can add a product to the main product page so that the inventory is kept up to date
+As a Superuser I can add a product to the main product page so that the inventory is kept up to date.
+
+* Acceptance Criteria:
     * An authenticated user can access a page to upload a product
     * All uploads are done at the front-end
     * The authenticated user is presented with additional options when logged in than regular users ie - an 'add product button'
@@ -219,7 +229,10 @@ We can also see that the details are as we chose.</br>
 But it looks like there was a mistake. The price is too low and the wrong image has been used.
 ___
 User Story:
-* As a Superuser I can edit a product so that I can correct any errors or make changes to the details
+
+As a Superuser I can edit a product so that I can correct any errors or make changes to the details.
+
+* Acceptance Criteria:
     * Authenticated user can edit a products details
     * User is notified of the changes that are made
 ___
@@ -245,7 +258,9 @@ Once again the page has been updated with the details chosen by the Superuser.</
 ___
 User Story:
 
-* As a Superuser I can delete a product so that I can keep the inventory up to date
+As a Superuser I can delete a product so that I can keep the inventory up to date.
+
+* Acceptance Criteria:
     * Authenticated user can select a product to delete
     * User must confirm that the product is to be deleted
     * Once deleted, user is redirected back to the main product page
