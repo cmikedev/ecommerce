@@ -4,11 +4,11 @@
 
 Moto Madness is a fictional ecommerce site offering for sale discounted factory-second motorcycles imported from Japan.
 
-### Deployed Website
+### 1.1 Deployed Website
 A link to the deployed project via the Heroku app can be found [here](https://moto-madness.herokuapp.com/).
 
 
-### Repository
+### 1.2 Repository
 The GitHub repository can be found [here](https://github.com/cmikedev/ecommerce).
 
 ____
@@ -35,12 +35,10 @@ ___
 
 ## 3. Site Design
 
-## 3.1 Layout & Visual Design
-
 A key feature of the proposed site was a clear, concise layout where the products were to the fore. The products should be immediately visible and not crowded. A simple navigation bar should allow the user to see move through the site. The user should also be aware of their logged in status.</br>
 </br>
 
-![image]()</br>
+![image](https://github.com/cmikedev/ecommerce/blob/main/readme_images/wireframe.png?raw=true)</br>
 </br>
 
 The construction of the site is based on Dennis Ivy's [Django Ecommerce Website tutorial](https://www.youtube.com/watch?v=_ELCMngbM0E&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=1&t=1738s) (see references). The following features were added:
@@ -50,10 +48,10 @@ The construction of the site is based on Dennis Ivy's [Django Ecommerce Website 
 * Notifications to users of their login status and the completion of actions
 * Role-based login
 * Full front-end CRUD functionality for the Superuser allowing them to add, read, update and delete products
-* A responsive products page which does not statically list the products allowing them to be updated at the front-end
+* A responsive Products page which does not statically list the products allowing them to be updated at the front-end
 * A Detail page which allows the user to view further information on a product
 * The ability for users to interact with the site by leaving comments
-* Notification of payment processing is no longer handled by JavaScript Alerts but by directing a user to a dedicate notification page
+* Notification of payment processing is no longer handled by JavaScript Alerts but by directing a user to a dedicated notification page
 
 Based on researching similar sites which sold either motorcycles or other vehicles it became apparent that a judiscious use of a small number of dark and light colours, usually shades of black and white, accentuated the colours of the products being sold and pushed them to the fore of the site. Site's such as [BMW's Autorrad](https://www.joeduffy.ie/motorrad) and [Kawasaki's Motorcycle site](https://www.kawasaki.co.uk/en/products) make use of a such a scheme.
 
@@ -70,7 +68,7 @@ This section focuses on testing the website from the point of view of the user i
 3.4 Code and Responsiveness Testing
 
 ## 4.1 User Story Testing
-___
+</br>
 User Story:
 
 As a Site User I can register an account so that add items to my cart.
@@ -124,9 +122,11 @@ As a Site User I can view a list of products for sale so that I can select one t
     * User can select a product and view further details
 ___
 
-A user can view all of the products in the Store. Eight products appear on each page. The user can navigate to different pages to see all of the products.
+</br>
+A user can view all of the products in the Store. Eight products appear on each page. The user can navigate to different pages to see all of the products.</br></br>
 
 ___
+
 User Story:
 
 As a Site User I can open up a product page so that I can view more details.
@@ -136,6 +136,7 @@ As a Site User I can open up a product page so that I can view more details.
     * User is presented with expanded details of the product on a dedicated page
 ___
 
+</br>
 If a user clicks on "View", they will be directed to a Detail page which contains more details about the product they are interested in as well as the ability to read and post comments.</br>
 </br>
 
@@ -143,6 +144,7 @@ If a user clicks on "View", they will be directed to a Detail page which contain
 </br>
 
 ___
+
 User Story:
 
 As a Site User I can leave comments under a product so that I can ask questions or leave a review.
@@ -153,6 +155,7 @@ As a Site User I can leave comments under a product so that I can ask questions 
     * User is notified that their comment has been posted
 ___
 
+</br>
 On the Details page a user will be able to see any comments that have been posted.</br>
 </br>
 
@@ -192,6 +195,7 @@ As a Site User I can use the integrated PayPal button so that I can purchase pro
     * User is redirected back to the main product/shop page
 ___
 
+</br>
 The User can click on the "Add to Cart" button of a product they wish to purchase. When the user navigates to the Cart page they product will be visible. (See Bugs Section below with regards to the comment)</br>
 </br>
 
@@ -227,7 +231,6 @@ When the user has submitted their payment they will be redirected to a page info
 
 ## 4.2 Admin / Superuser CRUD Capability Testing
 
-Adding a Product
 ___
 User Story:
 
@@ -240,6 +243,7 @@ As a Superuser I can add a product to the main product page so that the inventor
     * User is notified that the product has been successfully added
 ___
 
+</br>
 When a Superuser logs in and navigates to the Store they are presented with additional options on the main body ("Add Product") and in each of the product cards ("Edit", "Delete").</br>
 </br>
 
@@ -271,6 +275,7 @@ We can also see that the details are as we chose.</br>
 </br>
 
 But it looks like there was a mistake. The price is too low and the wrong image has been used.
+</br>
 ___
 User Story:
 
@@ -281,6 +286,7 @@ As a Superuser I can edit a product so that I can correct any errors or make cha
     * User is notified of the changes that are made
 ___
 
+</br>
 The Superuser can easily amend this by selecting the "Edit" button.</br>
 </br>
 
@@ -310,7 +316,7 @@ As a Superuser I can delete a product so that I can keep the inventory up to dat
     * Once deleted, user is redirected back to the main product page
 ___
 
-
+</br>
 The Superuser has the option to delete the product entirely simply by selecting the delete button.</br>
 </br>
 
@@ -334,7 +340,8 @@ The product has been deleted!</br>
 
 Throughtout the site, various actions such as the posting of forms are handled by authenticating users. Certain sections of the website will not be visible to a user that is not authenticated. However, this alone does not prohibit an unauthorised user accessing an area if they know the URL so authentication also takes place at the page level whereby a user that is not authenticated, or in the case of the product CRUD functionality, not a Superuser, will not be able to view that section of the site even with the URL.
 
-A user who has is not logged in will in the first instance be presented with a full welcome page which offers them the opportunity to register. Login and registration buttons (as opposed to a welcome message and logout button) will render in the top right of the navbar.
+A user who has is not logged in will in the first instance be presented with a full welcome page which offers them the opportunity to register. Login and registration buttons (as opposed to a welcome message and logout button) will render in the top right of the navbar.</br>
+</br>
 
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/authentication/1%20-%20welcome-view.png?raw=true)</br>
 </br>
@@ -479,18 +486,27 @@ ___
     * __Copy__ the link that that is shown
     * Within __Gitpod__ change the directory to where you would like the location of the cloned directory to be
     * Type __git clone__ and paste the link that you copied
-    * Press <mark style="background-color: grey">Enter</mark> and the local clone will be created<br />
-    <br />
+    * Press <mark style="background-color: grey">Enter</mark> and the local clone will be created
 
+___
 
+</br>
 
 
 ## 7. References
 
-[Codemy.com Youtube tutorial](https://www.youtube.com/watch?v=EqjRhO5CK6A&t=617s)
+
+* Dennis Ivy's [Django Ecommerce Website tutorial](https://www.youtube.com/watch?v=_ELCMngbM0E&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=1&t=1738s)
+
+    * Where the Python, JavaScript or CSS has been used or modified, it has been referenced in the code.
+
+* Codemy.com's [Youtube tutorial](https://www.youtube.com/watch?v=EqjRhO5CK6A&t=617s)
+    
+    * The "members" app has been created from this tutorial. The code contained within the tutorial mirrors Django's documentation. Customisation has been referenced in the code.
 
 
-----
+___
+
 </br>
 
 ## 8. Acknowledgements
