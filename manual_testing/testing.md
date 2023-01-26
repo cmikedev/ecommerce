@@ -52,56 +52,31 @@ The HTML was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#t
 ## 2.2 Store App:
 
 * Welcome page - welcome.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Store page - store.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Detail page - detail.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Comment page - add-comment.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Cart page - cart.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Checkout page - checkout.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Payment page - payment.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Add Product page - add-product.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Update Product page - update-product.html
-    * There were no warnings or errors returned</br>
-</br>
-
 * Delete Product page - delete-product.html
-    * There were no warnings or errors returned</br>
+    
+There were no warnings or errors returned for any of the pages.</br>
 </br>
 
 ## 3. CSS W3C Testing
-The CSS was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#textarea) and selecting 'CSS'. Additionally the CSS was also put through W3C's [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
-
-In each instance there were no errors returned.
+The CSS was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#textarea) and selecting 'CSS'. Additionally the CSS was also put through W3C's [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri).
 
 
 * W3C Nu HTML Checker
+    * no errors were returned by inputting the CSS code as it was written within Django.</br>
+    </br>
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/css/1%20-%20w3c%20-%20css.png?raw=true)</br >
 </br >
 
 * W3C Jigsaw
+    * Testing the CSS of the deployed site by passing a URL through to W3C's Jigsaw Validator returned a parsing error for each of the main pages and multiple vendor extension warnings. The parsing error related to Bootstrap's included CSS and the warnings related to Bootstrap, Cloudinary and Font-Awesome vendor extensions.</br></br>
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/css/2%20-%20w3c%20-%20css%20jigsaw.png?raw=true)</br >
 </br >
 
