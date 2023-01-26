@@ -62,10 +62,10 @@ ___
 
 This section focuses on testing the website from the point of view of the user in line with the user stories utilised in this project's Kanban. The testing is spread across four areas:
 
-3.1 User Story Testing
-3.2 Admin / Superuser CRUD Capability Testing
-3.3 Authentication Testing
-3.4 Code and Responsiveness Testing
+- 3.1 User Story Testing
+- 3.2 Admin / Superuser CRUD Capability Testing
+- 3.3 Authentication Testing
+- 3.4 Code and Responsiveness Testing
 
 ## 4.1 User Story Testing
 </br>
