@@ -72,6 +72,7 @@ The CSS was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#te
 * W3C Nu HTML Checker
     * no errors were returned by inputting the CSS code as it was written within Django.</br>
     </br>
+    
 ![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/css/1%20-%20w3c%20-%20css.png?raw=true)</br >
 </br >
 
@@ -79,7 +80,7 @@ The CSS was tested using W3C's [Nu HTML Checker](https://validator.w3.org/nu/#te
     * Testing the CSS of the deployed site by passing a URL through to W3C's Jigsaw Validator returned a parsing error for each of the main pages and multiple vendor extension warnings. The parsing error related to Bootstrap's included CSS and the warnings related to Bootstrap, Cloudinary and Font-Awesome vendor extensions.</br>
     </br>
 
-![image]()</br >
+![image](https://github.com/cmikedev/ecommerce/blob/main/manual_testing/images/css/2%20-%20w3c%20-%20css%20jigsaw.png?raw=true)</br >
 </br >
 
 
